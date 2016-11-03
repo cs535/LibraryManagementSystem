@@ -2,6 +2,7 @@ package libraryManagementSystem;
 
 public class Book {
 
+	private int isbn;
 	private String title;
 	private String author;
 	private int year;
@@ -9,15 +10,26 @@ public class Book {
 	private String image;
 	
 	//constructor
-	public Book(String title, String author, int year, String publishing_house, String image)
-	{
-        title = this.title;
-        author = this.author;
-        year = this.year;
-        publishing_house = this.publishing_house;
-        image = this.image;
-    }
+	public Book(){}
+	
+	@Override
+	public String toString() {
+		return "ISBN: " + isbn + "\n" +
+			   "Book Title: " + title + "\n" +
+			   "Book Author: " + author + "\n" +
+			   "Year of Publication: " + year + "\n" +
+			   "Publisher: " + publishing_house + "\n" +
+			   "Image URL: " + image;
+	}
+	
+	public int getIsbn() {
+		return isbn;
+	}
 
+	public void setIsbn(int isbn) {
+		this.isbn = isbn;
+	}
+	
 	public String getTitle() {
 		return title;
 	}
@@ -56,6 +68,5 @@ public class Book {
 
 	public void setImage(String image) {
 		this.image = image;
-	}
-	
+	}	
 }
