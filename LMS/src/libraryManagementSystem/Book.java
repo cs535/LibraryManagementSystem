@@ -2,7 +2,7 @@ package libraryManagementSystem;
 
 public class Book {
 
-	private int isbn;
+	private String isbn;
 	private String title;
 	private String author;
 	private int year;
@@ -22,11 +22,11 @@ public class Book {
 			   "Image URL: " + image;
 	}
 	
-	public int getIsbn() {
+	public String getIsbn() {
 		return isbn;
 	}
 
-	public void setIsbn(int isbn) {
+	public void setIsbn(String isbn) {
 		this.isbn = isbn;
 	}
 	

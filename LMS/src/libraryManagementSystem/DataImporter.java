@@ -42,7 +42,7 @@ public class DataImporter {
 		    {	
 			    Book b = new Book();
 			    String[] arr = str.split(";");
-			    b.setIsbn(Integer.valueOf(arr[0]));
+			    b.setIsbn(String.valueOf(arr[0]));
 			    b.setTitle(String.valueOf(arr[1]));
 			    b.setAuthor(String.valueOf(arr[2]));
 			    b.setYear(Integer.valueOf(arr[3]));
