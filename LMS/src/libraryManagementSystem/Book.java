@@ -1,5 +1,8 @@
 package libraryManagementSystem;
 
+/**
+ * class Book
+ * */
 public class Book {
 
 	private String isbn;
