@@ -5,12 +5,55 @@ import java.util.ArrayList;
 import libraryManagementSystem.Book;
 import libraryManagementSystem.DataImporter;
 
-
-
 public class Library
 {
+	private ArrayList<Book> bookList;
+	private DataImporter dataImporter;
 
-    public ArrayList<Book> search(String searchedString)
+    public Library() {
+		super();
+		this.bookList = new ArrayList<Book>();
+		this.dataImporter = new DataImporter();
+		this.initialise();
+	}
+
+	private void initialise() {
+		this.bookList = DataImporter.creatingData();
+	}
+
+	/**
+	 * @return bookList
+	 */
+	public ArrayList<Book> getBookList() {
+		return bookList;
+	}
+
+	/**
+	 * @param bookList
+	 */
+	public void setBookList(ArrayList<Book> bookList) {
+		this.bookList = bookList;
+	}
+
+	/**
+	 * @return dataImporter
+	 */
+	public DataImporter getDataImporter() {
+		return dataImporter;
+	}
+
+	/**
+	 * @param dataImporter
+	 */
+	public void setDataImporter(DataImporter dataImporter) {
+		this.dataImporter = dataImporter;
+	}
+
+	/**
+	 * @param searchedString
+	 * @return resultBookList
+	 */
+	public ArrayList<Book> search(String searchedString)
     {
         if (searchedString.isEmpty())
         {
