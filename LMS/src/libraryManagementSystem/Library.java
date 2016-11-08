@@ -61,6 +61,7 @@ public class Library
         {
             return null;
         }
+        
         ArrayList<Book> resultBookList = new ArrayList<>();
 
         for (int i = 0; i < bookList.size(); i++)
@@ -124,7 +125,7 @@ public class Library
 	 */
 	public ArrayList<Book> advancedSearch(String titleName, String authorName, int year, String publisherName)
 	{
-		if (titleName.isEmpty() || authorName.isEmpty() || year == 0)
+		if (titleName.isEmpty() || authorName.isEmpty() || publisherName.isEmpty() || year == 0)
 		{
 			return null;
 		}
