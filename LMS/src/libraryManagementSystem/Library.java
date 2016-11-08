@@ -51,25 +51,97 @@ public class Library
 	}
 
 	/**
-	 * @param searchedString
+	 * @brief simple search according to title
+	 * @param titleName
 	 * @return resultBookList
 	 */
-	public ArrayList<Book> search(String searchedString)
+	public ArrayList<Book> simpleSearch(String titleName)
     {
-        if (searchedString.isEmpty())
+        if (titleName.isEmpty())
         {
             return null;
         }
-        ArrayList<Book> bookList = new ArrayList<>(DataImporter.creatingData()); //booklist library e eklendiği zaman kaldırılacak library'nin booklisti kullanılacak.
         ArrayList<Book> resultBookList = new ArrayList<>();
 
         for (int i = 0; i < bookList.size(); i++)
         {
-            if (bookList.get(i).getTitle().toLowerCase().contains(searchedString.toLowerCase()))
+            if (bookList.get(i).getTitle().toLowerCase().contains(titleName.toLowerCase()))
             {
                 resultBookList.add(bookList.get(i));
             }
         }
         return resultBookList;
     }
+	
+	/**
+	 * @brief simple search according to year
+	 * @param searchedyear
+	 * @return resultBookList
+	 */
+	public ArrayList<Book> searchAccordingToYear(int searchedYear)
+	{
+		ArrayList<Book> resultBookList = new ArrayList<>();
+		
+		for (int i = 0; i < bookList.size(); i++)
+		{
+			if (bookList.get(i).getYear() == searchedYear)
+			{
+				resultBookList.add(bookList.get(i));
+			}
+		}
+		return resultBookList;
+		
+	}
+	
+	/**
+	 * @brief simple search according to author
+	 * @param authorName
+	 * @return resultBookList
+	 */
+	public ArrayList<Book> searchedAccordingToAuthor(String authorName)
+	{
+		if (authorName.isEmpty())
+		{
+			return null;
+		}
+		
+		ArrayList<Book> resultBookList = new ArrayList<>();
+		
+		for (int i = 0; i < bookList.size(); i++)
+		{
+			if (bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase()))
+			{
+				resultBookList.add(bookList.get(i));
+			}
+		}
+		return resultBookList;
+	}
+	
+	/**
+	 * @brief simple search according to title, author, year, publisher
+	 * @param titleName, authorName, year, publisherName
+	 * @return resultBookList
+	 */
+	public ArrayList<Book> advancedSearch(String titleName, String authorName, int year, String publisherName)
+	{
+		if (titleName.isEmpty() || authorName.isEmpty() || year == 0)
+		{
+			return null;
+		}
+		
+		ArrayList<Book> resultBookList = new ArrayList<>();
+		
+		for (int i = 0; i < bookList.size(); i++)
+		{
+			if (bookList.get(i).getTitle().toLowerCase().contains(titleName.toLowerCase()) && 
+				bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase()) &&
+				bookList.get(i).getPublishing_house().toLowerCase().contains(publisherName.toLowerCase()) &&
+				bookList.get(i).getYear() == year)
+			{
+				resultBookList.add(bookList.get(i));
+			}
+		}
+		return resultBookList;
+		
+	}
 }
