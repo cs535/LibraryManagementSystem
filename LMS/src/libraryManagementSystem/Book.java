@@ -15,16 +15,6 @@ public class Book {
 	//constructor
 	public Book(){}
 	
-	@Override
-	public String toString() {
-		return "ISBN: " + isbn + "\n" +
-			   "Book Title: " + title + "\n" +
-			   "Book Author: " + author + "\n" +
-			   "Year of Publication: " + year + "\n" +
-			   "Publisher: " + publishing_house + "\n" +
-			   "Image URL: " + image;
-	}
-	
 	public String getIsbn() {
 		return isbn;
 	}
@@ -72,4 +62,14 @@ public class Book {
 	public void setImage(String image) {
 		this.image = image;
 	}	
+	
+	@Override
+	public String toString() {
+		return "ISBN: " + isbn + "\n" +
+			   "Book Title: " + title + "\n" +
+			   "Book Author: " + author + "\n" +
+			   "Year of Publication: " + year + "\n" +
+			   "Publisher: " + publishing_house + "\n" +
+			   "Image URL: " + image;
+	}
 }
