@@ -5,9 +5,7 @@ import java.util.ArrayList;
 import libraryManagementSystem.Book;
 import libraryManagementSystem.DataImporter;
 
-/*
- * Class Library
- * */
+
 public class Library
 {
 	private ArrayList<Book> bookList;
