@@ -79,7 +79,7 @@ public class Library
 	 * @param searchedyear
 	 * @return resultBookList
 	 */
-	public ArrayList<Book> searchAccordingToYear(int searchedYear)
+	public ArrayList<Book> searchAccordingToYear(String searchedYear)
 	{
 		ArrayList<Book> resultBookList = new ArrayList<>();
 		
@@ -123,9 +123,9 @@ public class Library
 	 * @param titleName, authorName, year, publisherName
 	 * @return resultBookList
 	 */
-	public ArrayList<Book> advancedSearch(String titleName, String authorName, int year, String publisherName)
+	public ArrayList<Book> advancedSearch(String titleName, String authorName, String year, String publisherName)
 	{
-		if (titleName.isEmpty() || authorName.isEmpty() || publisherName.isEmpty() || year == 0)
+		if (titleName.isEmpty() || authorName.isEmpty() || publisherName.isEmpty() || year.isEmpty())
 		{
 			return null;
 		}

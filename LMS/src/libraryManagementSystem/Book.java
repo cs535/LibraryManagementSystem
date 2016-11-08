@@ -8,7 +8,7 @@ public class Book {
 	private String isbn;
 	private String title;
 	private String author;
-	private int year;
+	private String year;
 	private String publishing_house;
 	private String image;
 	
@@ -39,11 +39,11 @@ public class Book {
 		this.author = author;
 	}
 
-	public int getYear() {
+	public String getYear() {
 		return year;
 	}
 
-	public void setYear(int year) {
+	public void setYear(String year) {
 		this.year = year;
 	}
 

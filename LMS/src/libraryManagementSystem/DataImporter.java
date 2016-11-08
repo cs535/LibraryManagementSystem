@@ -45,7 +45,7 @@ public class DataImporter {
 			    b.setIsbn(String.valueOf(arr[0]));
 			    b.setTitle(String.valueOf(arr[1]));
 			    b.setAuthor(String.valueOf(arr[2]));
-			    b.setYear(Integer.valueOf(arr[3]));
+			    b.setYear(String.valueOf(arr[3]));
 			    b.setPublishing_house(String.valueOf(arr[4]));
 			    b.setImage(String.valueOf(arr[5]));
 			    bookList.add(b);
