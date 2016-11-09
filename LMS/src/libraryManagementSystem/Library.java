@@ -59,7 +59,7 @@ public class Library
     {
         if (titleName.isEmpty())
         {
-            return null;
+            return bookList;
         }
         
         ArrayList<Book> resultBookList = new ArrayList<>();
@@ -81,11 +81,15 @@ public class Library
 	 */
 	public ArrayList<Book> searchAccordingToYear(String searchedYear)
 	{
+		if (searchedYear.isEmpty())
+		{
+			return bookList;
+		}
 		ArrayList<Book> resultBookList = new ArrayList<>();
 		
 		for (int i = 0; i < bookList.size(); i++)
 		{
-			if (bookList.get(i).getYear() == searchedYear)
+			if (bookList.get(i).getYear().contains(searchedYear))
 			{
 				resultBookList.add(bookList.get(i));
 			}
@@ -99,11 +103,11 @@ public class Library
 	 * @param authorName
 	 * @return resultBookList
 	 */
-	public ArrayList<Book> searchedAccordingToAuthor(String authorName)
+	public ArrayList<Book> searchAccordingToAuthor(String authorName)
 	{
 		if (authorName.isEmpty())
 		{
-			return null;
+			return bookList;
 		}
 		
 		ArrayList<Book> resultBookList = new ArrayList<>();
@@ -125,9 +129,9 @@ public class Library
 	 */
 	public ArrayList<Book> advancedSearch(String titleName, String authorName, String year, String publisherName)
 	{
-		if (titleName.isEmpty() || authorName.isEmpty() || publisherName.isEmpty() || year.isEmpty())
+		if (titleName.isEmpty() && authorName.isEmpty() && publisherName.isEmpty() && year.isEmpty())
 		{
-			return null;
+			return bookList;
 		}
 		
 		ArrayList<Book> resultBookList = new ArrayList<>();
@@ -137,12 +141,11 @@ public class Library
 			if (bookList.get(i).getTitle().toLowerCase().contains(titleName.toLowerCase()) && 
 				bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase()) &&
 				bookList.get(i).getPublishing_house().toLowerCase().contains(publisherName.toLowerCase()) &&
-				bookList.get(i).getYear() == year)
+				bookList.get(i).getYear().toLowerCase().contains(year.toLowerCase()))
 			{
 				resultBookList.add(bookList.get(i));
 			}
 		}
 		return resultBookList;
-		
 	}
 }
