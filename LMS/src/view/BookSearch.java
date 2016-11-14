@@ -1,11 +1,16 @@
 package view;
 
+import libraryManagementSystem.*;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
@@ -13,16 +18,20 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.JTable;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.awt.event.ActionEvent;
 
 public class BookSearch extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTable table;
+	private JTextField tfTitle;
+	private JTextField tfAuthor;
+	private JTextField tfYear;
+	private JTextField tfPublisher;
+	private JTextField tfISBN;
+	private JTable tableSearchResults;
+	private Library library;
 
 	/**
 	 * Launch the application.
@@ -31,8 +40,10 @@ public class BookSearch extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BookSearch frame = new BookSearch();
+					Library library = new Library();
+					BookSearch frame = new BookSearch(library);
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -43,10 +54,12 @@ public class BookSearch extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public BookSearch() {
+	public BookSearch(Library library) {
+		this.library = library;
+		
 		setTitle("Book Search");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 699, 498);
+		setBounds(100, 100, 691, 921);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -54,7 +67,7 @@ public class BookSearch extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(12, 12, 665, 198);
+		panel.setBounds(12, 12, 664, 198);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -88,39 +101,40 @@ public class BookSearch extends JFrame {
 		lblTitle.setBounds(12, 12, 94, 32);
 		panel.add(lblTitle);
 		
-		textField = new JTextField();
-		textField.setBounds(133, 20, 198, 19);
-		panel.add(textField);
-		textField.setColumns(10);
+		tfTitle = new JTextField();
+		tfTitle.setBounds(133, 20, 198, 19);
+		panel.add(tfTitle);
+		tfTitle.setColumns(10);
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
-		textField_1.setBounds(133, 60, 198, 19);
-		panel.add(textField_1);
+		tfAuthor = new JTextField();
+		tfAuthor.setColumns(10);
+		tfAuthor.setBounds(133, 60, 198, 19);
+		panel.add(tfAuthor);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
-		textField_2.setBounds(133, 93, 198, 19);
-		panel.add(textField_2);
+		tfYear = new JTextField();
+		tfYear.setColumns(10);
+		tfYear.setBounds(133, 93, 198, 19);
+		panel.add(tfYear);
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
-		textField_3.setBounds(133, 126, 198, 19);
-		panel.add(textField_3);
+		tfPublisher = new JTextField();
+		tfPublisher.setColumns(10);
+		tfPublisher.setBounds(133, 126, 198, 19);
+		panel.add(tfPublisher);
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
-		textField_4.setBounds(133, 162, 198, 19);
-		panel.add(textField_4);
+		tfISBN = new JTextField();
+		tfISBN.setColumns(10);
+		tfISBN.setBounds(133, 162, 198, 19);
+		panel.add(tfISBN);
 		
-		JButton btnNewButton = new JButton("Search");
-		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 30));
-		btnNewButton.setBounds(343, 17, 310, 158);
-		panel.add(btnNewButton);
+		JButton btnSearch = new JButton("Search");
+		
+		btnSearch.setFont(new Font("Dialog", Font.BOLD, 30));
+		btnSearch.setBounds(342, 143, 310, 46);
+		panel.add(btnSearch);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.LIGHT_GRAY);
-		panel_1.setBounds(22, 222, 655, 237);
+		panel_1.setBounds(12, 222, 664, 660);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		
@@ -131,9 +145,71 @@ public class BookSearch extends JFrame {
 		lblSearchResults.setFont(new Font("Dialog", Font.BOLD, 16));
 		panel_1.add(lblSearchResults);
 		
-		table = new JTable();
-		table.setBackground(Color.GRAY);
-		table.setBounds(12, 46, 631, 179);
-		panel_1.add(table);
+		tableSearchResults = new JTable(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"Title", "Author", "Year", "Publisher", "ISBN"
+			}
+		));
+		tableSearchResults.setBackground(Color.GRAY);
+		tableSearchResults.setBounds(12, 48, 631, 600); 
+		
+		panel_1.add(tableSearchResults);
+		
+		JLabel label_4 = new JLabel("Title");
+		label_4.setHorizontalAlignment(SwingConstants.CENTER);
+		label_4.setFont(new Font("Dialog", Font.BOLD, 12));
+		label_4.setBounds(22, 33, 117, 15);
+		panel_1.add(label_4);
+		
+		JLabel lblAuthor = new JLabel("Author");
+		lblAuthor.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAuthor.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblAuthor.setBounds(147, 33, 117, 15);
+		panel_1.add(lblAuthor);
+		
+		JLabel lblYear = new JLabel("Year");
+		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
+		lblYear.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblYear.setBounds(263, 33, 117, 15);
+		panel_1.add(lblYear);
+		
+		JLabel lblIsbn = new JLabel("ISBN");
+		lblIsbn.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIsbn.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblIsbn.setBounds(526, 33, 117, 15);
+		panel_1.add(lblIsbn);
+		
+		JLabel lblPublisher = new JLabel("Publisher");
+		lblPublisher.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPublisher.setFont(new Font("Dialog", Font.BOLD, 12));
+		lblPublisher.setBounds(397, 33, 117, 15);
+		panel_1.add(lblPublisher);
+		
+		
+		btnSearch.addActionListener(new SearchButtonClickHandler());
+	}
+	
+	class SearchButtonClickHandler implements ActionListener
+	{
+		@Override
+		public void actionPerformed(ActionEvent e) 
+		{
+			 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText());
+			 DefaultTableModel tableModel = (DefaultTableModel) tableSearchResults.getModel();
+			 tableModel.getDataVector().removeAllElements();
+			 tableModel.fireTableDataChanged();
+			 
+			 for (Book currentBook : results)
+			 { 
+				 tableModel.addRow(new Object[]{currentBook.getTitle(), 
+						 currentBook.getAuthor(),  
+						 currentBook.getYear(), 
+						 currentBook.getPublishing_house(), 
+						 currentBook.getIsbn()});
+			 } 
+		}
 	}
 }
