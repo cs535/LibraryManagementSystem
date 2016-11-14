@@ -142,11 +142,11 @@ public class Library
 			boolean y = bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase());
 			boolean z = (authorName     != "" && bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase())) ;
 			
-			if ((!titleName.isEmpty()    && bookList.get(i).getTitle().toLowerCase().contains(titleName.toLowerCase())) ||
-				(!authorName.isEmpty()    && bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase())) ||
-				(!publisherName.isEmpty() && bookList.get(i).getPublishing_house().toLowerCase().contains(publisherName.toLowerCase())) ||
-				(!year.isEmpty()          && bookList.get(i).getYear().toLowerCase().contains(year.toLowerCase())))
-			{
+			if (bookList.get(i).getTitle().toLowerCase().contains(titleName.toLowerCase()) && 
+					bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase()) &&
+					bookList.get(i).getPublishing_house().toLowerCase().contains(publisherName.toLowerCase()) &&
+					bookList.get(i).getYear().toLowerCase().contains(year.toLowerCase()))
+				{
 				resultBookList.add(bookList.get(i));
 			}
 		}
