@@ -12,13 +12,20 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+
 import java.awt.Color;
+
 import javax.swing.JTable;
+
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -188,11 +195,18 @@ public class BookSearch extends JFrame {
 		lblPublisher.setBounds(397, 33, 117, 15);
 		panel_1.add(lblPublisher);
 		
-		
+		SearchButtonClickHandler listener = new SearchButtonClickHandler();
+		tfAuthor.addActionListener(listener);
+		tfISBN.addActionListener(listener);
+		tfPublisher.addActionListener(listener);
+		tfTitle.addActionListener(listener);
+		tfYear.addActionListener(listener);
+
+		btnSearch.addKeyListener(listener);
 		btnSearch.addActionListener(new SearchButtonClickHandler());
 	}
 	
-	class SearchButtonClickHandler implements ActionListener
+	class SearchButtonClickHandler implements ActionListener, KeyListener
 	{
 		@Override
 		public void actionPerformed(ActionEvent e) 
@@ -210,6 +224,40 @@ public class BookSearch extends JFrame {
 						 currentBook.getPublishing_house(), 
 						 currentBook.getIsbn()});
 			 } 
+		}
+		
+	    public void keyPressed(KeyEvent e) {
+	        if (e.getKeyCode()==KeyEvent.VK_ENTER){
+	            System.out.println("Hello");
+	            
+				 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText());
+				 DefaultTableModel tableModel = (DefaultTableModel) tableSearchResults.getModel();
+				 tableModel.getDataVector().removeAllElements();
+				 tableModel.fireTableDataChanged();
+				 
+				 for (Book currentBook : results)
+				 { 
+					 tableModel.addRow(new Object[]{currentBook.getTitle(), 
+							 currentBook.getAuthor(),  
+							 currentBook.getYear(), 
+							 currentBook.getPublishing_house(), 
+							 currentBook.getIsbn()});
+				 } 
+	        }
+
+
+	    }
+
+		@Override
+		public void keyReleased(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void keyTyped(KeyEvent arg0) {
+			// TODO Auto-generated method stub
+			
 		}
 	}
 }
