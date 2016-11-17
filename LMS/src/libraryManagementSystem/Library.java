@@ -127,7 +127,7 @@ public class Library
 	 * @param titleName, authorName, year, publisherName
 	 * @return resultBookList
 	 */
-	public ArrayList<Book> advancedSearch(String titleName, String authorName, String year, String publisherName)
+	public ArrayList<Book> advancedSearch(String titleName, String authorName, String year, String publisherName, String isbnNumber)
 	{
 		if (titleName.isEmpty() && authorName.isEmpty() && publisherName.isEmpty() && year.isEmpty())
 		{
@@ -141,11 +141,12 @@ public class Library
 			boolean x = authorName.isEmpty();
 			boolean y = bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase());
 			boolean z = (authorName     != "" && bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase())) ;
-			
+
 			if (bookList.get(i).getTitle().toLowerCase().contains(titleName.toLowerCase()) && 
 					bookList.get(i).getAuthor().toLowerCase().contains(authorName.toLowerCase()) &&
 					bookList.get(i).getPublishing_house().toLowerCase().contains(publisherName.toLowerCase()) &&
-					bookList.get(i).getYear().toLowerCase().contains(year.toLowerCase()))
+					bookList.get(i).getYear().toLowerCase().contains(year.toLowerCase()) &&
+					bookList.get(i).getIsbn().toLowerCase().contains(isbnNumber.toLowerCase()))
 				{
 				resultBookList.add(bookList.get(i));
 			}

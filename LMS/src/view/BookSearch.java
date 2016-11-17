@@ -211,7 +211,7 @@ public class BookSearch extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) 
 		{
-			 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText());
+			 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText(), tfISBN.getText());
 			 DefaultTableModel tableModel = (DefaultTableModel) tableSearchResults.getModel();
 			 tableModel.getDataVector().removeAllElements();
 			 tableModel.fireTableDataChanged();
@@ -230,7 +230,7 @@ public class BookSearch extends JFrame {
 	        if (e.getKeyCode()==KeyEvent.VK_ENTER){
 	            System.out.println("Hello");
 	            
-				 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText());
+				 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText(), tfISBN.getText());
 				 DefaultTableModel tableModel = (DefaultTableModel) tableSearchResults.getModel();
 				 tableModel.getDataVector().removeAllElements();
 				 tableModel.fireTableDataChanged();
