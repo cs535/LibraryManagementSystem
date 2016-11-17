@@ -20,7 +20,10 @@ public class Book {
 	}
 
 	public void setIsbn(String isbn) {
-		this.isbn = isbn;
+		if (isbn != null)
+			this.isbn = isbn;
+		else
+			this.isbn = "";
 	}
 	
 	public String getTitle() {
@@ -28,7 +31,10 @@ public class Book {
 	}
 
 	public void setTitle(String title) {
-		this.title = title;
+		if (title != null)
+			this.title = title;
+		else
+			this.title = "";
 	}
 
 	public String getAuthor() {
@@ -36,7 +42,10 @@ public class Book {
 	}
 
 	public void setAuthor(String author) {
-		this.author = author;
+		if (author != null)
+			this.author = author;
+		else
+			this.author = "";
 	}
 
 	public String getYear() {
@@ -44,7 +53,10 @@ public class Book {
 	}
 
 	public void setYear(String year) {
-		this.year = year;
+		if (year != null)
+			this.year = year;
+		else
+			this.year = "";
 	}
 
 	public String getPublishing_house() {
@@ -52,7 +64,10 @@ public class Book {
 	}
 
 	public void setPublishing_house(String publishing_house) {
-		this.publishing_house = publishing_house;
+		if (publishing_house != null)
+			this.publishing_house = publishing_house;
+		else
+			this.publishing_house = "";
 	}
 
 	public String getImage() {
@@ -60,7 +75,10 @@ public class Book {
 	}
 
 	public void setImage(String image) {
-		this.image = image;
+		if (image != null)
+			this.image = image;
+		else
+			this.image = "";
 	}	
 	
 	@Override
