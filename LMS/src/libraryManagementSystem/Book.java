@@ -15,6 +15,17 @@ public class Book {
 	//constructor
 	public Book(){}
 	
+	public Book(String isbn, String title, String author, String year, String publishing_house, String image) {
+		super();
+		this.isbn = isbn;
+		this.title = title;
+		this.author = author;
+		this.year = year;
+		this.publishing_house = publishing_house;
+		this.image = image;
+	}
+
+
 	public String getIsbn() {
 		return isbn;
 	}

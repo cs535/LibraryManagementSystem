@@ -17,6 +17,11 @@ public class Library
 		this.dataImporter = new DataImporter();
 		this.initialise();
 	}
+    
+    public Library(ArrayList<Book> bookList)
+    {
+    	this.bookList = bookList;
+    }
 
 	private void initialise() {
 		this.bookList = DataImporter.creatingData();
