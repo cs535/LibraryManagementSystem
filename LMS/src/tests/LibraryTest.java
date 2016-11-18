@@ -17,11 +17,11 @@ public class LibraryTest extends TestCase {
 	public LibraryTest() {
 		super();
 		ArrayList<Book> bookList = new ArrayList<Book>();
-		bookList.add(new Book("ispn1", "title1", "author1", "1", "house1", ""));
-		bookList.add(new Book("ispn2", "title1", "author2", "2", "house3", ""));
-		bookList.add(new Book("ispn3", "title2", "author1", "1", "house1", ""));
-		bookList.add(new Book("ispn4", "title3", "author1", "3", "house2", ""));
-		bookList.add(new Book("ispn5", "title3", "author3", "3", "house4", ""));
+		bookList.add(new Book("isbn1", "title1", "author1", "1", "house1", ""));
+		bookList.add(new Book("isbn2", "title1", "author2", "2", "house3", ""));
+		bookList.add(new Book("isbn3", "title2", "author1", "1", "house1", ""));
+		bookList.add(new Book("isbn4", "title3", "author1", "3", "house2", ""));
+		bookList.add(new Book("isbn5", "title3", "author3", "3", "house4", ""));
 		this.library = new Library(bookList);
 	}
 	
