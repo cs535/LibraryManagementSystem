@@ -41,6 +41,7 @@ public class DataImporter {
 		    while((str = br.readLine()) != null)
 		    {	
 			    Book b = new Book();
+			    str = str.replace('"', ' ');
 			    String[] arr = str.split(";");
 			    b.setIsbn(String.valueOf(arr[0]));
 			    b.setTitle(String.valueOf(arr[1]));
