@@ -57,10 +57,18 @@ public class BookDetail extends JFrame {
 		contentPane.setLayout(null);
 		
 		Image image = null;
+		String path = "http://images.amazon.com/images/P/0449906736.01.THUMBZZZ.jpg";
+		
+		if (this.book.getImage() != null)
+		{
+			path = this.book.getImage();
+		}
+		
         try {
-            URL url = new URL(this.book.getImage());
+            URL url = new URL(path);
             image = ImageIO.read(url);
         } catch (IOException e) {
+        	System.out.println("hataaaa \n");
         	e.printStackTrace();
         }
 
