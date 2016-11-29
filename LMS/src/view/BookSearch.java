@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 
 import java.awt.Color;
+import java.awt.Dimension;
 
 import javax.swing.JTable;
 
@@ -163,7 +164,12 @@ public class BookSearch extends JFrame {
 		tableSearchResults.setBackground(Color.GRAY);
 		tableSearchResults.setBounds(12, 48, 631, 600); 
 		
-		panel_1.add(tableSearchResults);
+		JScrollPane scrollPaneToTableSearchResults=new JScrollPane(tableSearchResults);
+		scrollPaneToTableSearchResults.setBounds(12, 48, 631, 600); 
+		scrollPaneToTableSearchResults.setVisible(true);
+        add(scrollPaneToTableSearchResults);
+		
+		panel_1.add(scrollPaneToTableSearchResults);
 		
 		JLabel label_4 = new JLabel("Title");
 		label_4.setHorizontalAlignment(SwingConstants.CENTER);
