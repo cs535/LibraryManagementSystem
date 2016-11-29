@@ -10,9 +10,7 @@ import libraryManagementSystem.Book;
 
 public class DataImporter {
 
-	public static ArrayList<Book> creatingData() {
-		
-		String fileName = "BXBooks.csv";
+	public static ArrayList<Book> creatingData(String fileName) {
 		
 		File fileFromDataReading = new File(fileName);
 		
