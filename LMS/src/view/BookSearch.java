@@ -195,15 +195,16 @@ public class BookSearch extends JFrame {
 		lblSearchResults.setFont(new Font("Dialog", Font.BOLD, 16));
 		panel_1.add(lblSearchResults);
 
-		String[][] datas = new String[library.getSize()][5];
+		String[][] datas = new String[library.getSize()][6];
 		for (int i = 0; i < library.getSize(); i++) {
 			datas[i][0] = library.getBookList().get(i).getTitle();
 			datas[i][1] = library.getBookList().get(i).getAuthor();
 			datas[i][2] = library.getBookList().get(i).getYear();
 			datas[i][3] = library.getBookList().get(i).getPublishing_house();
 			datas[i][4] = library.getBookList().get(i).getIsbn();
+			datas[i][5] = library.getBookList().get(i).getImage();
 		}
-		String[] columnName = { "Title", "Author", "Year", "Publisher", "ISBN" };
+		String[] columnName = { "Title", "Author", "Year", "Publisher", "ISBN", "Image URL" };
 
 		tableSearchResults = new DefaultTableModel(datas, columnName) {
 			@Override
@@ -215,18 +216,7 @@ public class BookSearch extends JFrame {
 		table.setBackground(Color.WHITE);
 		table.setBounds(12, 48, 631, 600);
 		
-		MouseListener mouseListenerEvents = new MouseAdapter() {
-			public void mouseClicked(MouseEvent e) {
-				if (e.getClickCount() == 1) { // double click detection
-					JTable target = (JTable) e.getSource();
-					int row = target.getSelectedRow();
-					BookDetail bookDetail = new BookDetail(bookResults.get(row));
-					bookDetail.setVisible(true);
-				}
-			}
-		};
 
-		table.addMouseListener(mouseListenerEvents);
 		
 		JScrollPane scrollPaneToTableSearchResults = new JScrollPane(table);
 		scrollPaneToTableSearchResults.setBounds(12, 48, 631, 600);
@@ -265,9 +255,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -290,9 +281,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -330,9 +322,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -355,9 +348,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -395,9 +389,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -420,9 +415,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -460,9 +456,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -485,9 +482,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 
 			@Override
@@ -525,9 +523,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				//system.out.println(bookResults);
 			}
 
 			@Override
@@ -550,9 +549,10 @@ public class BookSearch extends JFrame {
 					b.setYear((String)table.getValueAt(i, 2));
 					b.setPublishing_house((String)table.getValueAt(i, 3));
 					b.setIsbn((String)table.getValueAt(i, 4));
+					b.setImage((String)table.getValueAt(i, 5));
 					bookResults.add(b);
 				}
-				System.out.println(bookResults);
+				////system.out.println(bookResults);
 			}
 		
 
@@ -562,6 +562,19 @@ public class BookSearch extends JFrame {
 				// UnsupportedOperationException("Not supported yet.");
 			}
 		});
+		
+		MouseListener mouseListenerEvents = new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+				if (e.getClickCount() == 1) { // double click detection
+					JTable target = (JTable) e.getSource();
+					int row = target.getSelectedRow();
+					BookDetail bookDetail = new BookDetail(bookResults.get(row));
+					bookDetail.setVisible(true);
+				}
+			}
+		};
+
+		table.addMouseListener(mouseListenerEvents);
 
 		/* 									*/
 		/* 									*/
