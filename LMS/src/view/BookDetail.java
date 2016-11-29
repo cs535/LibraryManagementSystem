@@ -1,5 +1,7 @@
 package view;
 
+import libraryManagementSystem.*;
+
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -14,6 +16,8 @@ import java.awt.Font;
 public class BookDetail extends JFrame {
 
 	private JPanel contentPane;
+	
+	private Book book;
 
 	/**
 	 * Launch the application.
@@ -22,7 +26,8 @@ public class BookDetail extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					BookDetail frame = new BookDetail();
+					Book book = new Book();
+					BookDetail frame = new BookDetail(book);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -34,7 +39,9 @@ public class BookDetail extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public BookDetail() {
+	public BookDetail(Book book) {
+		this.book = book;
+		
 		setTitle("Book Detail");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 701, 412);
@@ -48,7 +55,7 @@ public class BookDetail extends JFrame {
 		panel.setBounds(12, 12, 176, 169);
 		contentPane.add(panel);
 		
-		JLabel lblNewLabel = new JLabel("Book Title");
+		JLabel lblNewLabel = new JLabel(this.book.getTitle());
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 50));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBounds(206, 12, 473, 169);
@@ -60,12 +67,12 @@ public class BookDetail extends JFrame {
 		lblAuthor.setBounds(12, 226, 176, 32);
 		contentPane.add(lblAuthor);
 		
-		JLabel lblNameOfThe = new JLabel("Name of the author");
+		JLabel lblNameOfThe = new JLabel(this.book.getAuthor());
 		lblNameOfThe.setFont(new Font("Dialog", Font.BOLD, 16));
 		lblNameOfThe.setBounds(232, 226, 429, 32);
 		contentPane.add(lblNameOfThe);
 		
-		JLabel label = new JLabel("2016");
+		JLabel label = new JLabel(this.book.getYear());
 		label.setFont(new Font("Dialog", Font.BOLD, 16));
 		label.setBounds(232, 259, 429, 32);
 		contentPane.add(label);
@@ -76,7 +83,7 @@ public class BookDetail extends JFrame {
 		lblYear.setBounds(12, 259, 176, 32);
 		contentPane.add(lblYear);
 		
-		JLabel lblPublisher_1 = new JLabel("Publisher");
+		JLabel lblPublisher_1 = new JLabel(this.book.getPublishing_house());
 		lblPublisher_1.setFont(new Font("Dialog", Font.BOLD, 16));
 		lblPublisher_1.setBounds(232, 292, 429, 32);
 		contentPane.add(lblPublisher_1);
@@ -87,7 +94,7 @@ public class BookDetail extends JFrame {
 		lblPublisher.setBounds(12, 292, 176, 32);
 		contentPane.add(lblPublisher);
 		
-		JLabel label_4 = new JLabel("978-3-16-148410-0");
+		JLabel label_4 = new JLabel(this.book.getIsbn());
 		label_4.setFont(new Font("Dialog", Font.BOLD, 16));
 		label_4.setBounds(232, 328, 429, 32);
 		contentPane.add(label_4);

@@ -27,6 +27,9 @@ import javax.swing.JTable;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -40,6 +43,7 @@ public class BookSearch extends JFrame {
 	private JTextField tfISBN;
 	private JTable tableSearchResults;
 	private Library library;
+	ArrayList<Book> bookResults;
 
 	/**
 	 * Launch the application.
@@ -164,6 +168,19 @@ public class BookSearch extends JFrame {
 		tableSearchResults.setBackground(Color.GRAY);
 		tableSearchResults.setBounds(12, 48, 631, 600); 
 		
+		MouseListener mouseListenerEvents = new MouseAdapter() {
+			public void mouseClicked(MouseEvent e) {
+		         if (e.getClickCount() == 1) { // double click detection		        	 
+		        	 JTable target = (JTable)e.getSource();
+		        	 int row = target.getSelectedRow();
+		        	 BookDetail bookDetail = new BookDetail(bookResults.get(row));
+		        	 bookDetail.setVisible(true);
+		         }
+			}
+		};
+		
+		tableSearchResults.addMouseListener(mouseListenerEvents);
+		
 		JScrollPane scrollPaneToTableSearchResults=new JScrollPane(tableSearchResults);
 		scrollPaneToTableSearchResults.setBounds(12, 48, 631, 600); 
 		scrollPaneToTableSearchResults.setVisible(true);
@@ -217,6 +234,7 @@ public class BookSearch extends JFrame {
 		@Override
 		public void actionPerformed(ActionEvent e) 
 		{
+			bookResults = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText(), tfISBN.getText());
 			 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText(), tfISBN.getText());
 			 DefaultTableModel tableModel = (DefaultTableModel) tableSearchResults.getModel();
 			 tableModel.getDataVector().removeAllElements();
@@ -235,7 +253,9 @@ public class BookSearch extends JFrame {
 	    public void keyPressed(KeyEvent e) {
 	        if (e.getKeyCode()==KeyEvent.VK_ENTER){
 	            System.out.println("Hello");
-	            
+
+				bookResults = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText(), tfISBN.getText());
+				 
 				 ArrayList<Book> results = library.advancedSearch(tfTitle.getText(), tfAuthor.getText(), tfYear.getText(), tfPublisher.getText(), tfISBN.getText());
 				 DefaultTableModel tableModel = (DefaultTableModel) tableSearchResults.getModel();
 				 tableModel.getDataVector().removeAllElements();
