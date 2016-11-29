@@ -158,4 +158,12 @@ public class Library
 		}
 		return resultBookList;
 	}
+	
+	/**
+	 * @brief returns library's booklist's size
+	 * @return size
+	 */
+	public int getSize(){
+		return bookList.size();
+	}
 }
