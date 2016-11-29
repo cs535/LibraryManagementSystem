@@ -5,6 +5,8 @@ import libraryManagementSystem.*;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -12,6 +14,10 @@ import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.net.URL;
 
 public class BookDetail extends JFrame {
 
@@ -50,7 +56,18 @@ public class BookDetail extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JPanel panel = new JPanel();
+		Image image = null;
+        try {
+            URL url = new URL(this.book.getImage());
+            image = ImageIO.read(url);
+        } catch (IOException e) {
+        	e.printStackTrace();
+        }
+
+        JLabel image_label = new JLabel(new ImageIcon(image));
+
+		JPanel panel = new JPanel(new BorderLayout());
+		panel.add(image_label, BorderLayout.CENTER);
 		panel.setBackground(Color.LIGHT_GRAY);
 		panel.setBounds(12, 12, 176, 169);
 		contentPane.add(panel);
