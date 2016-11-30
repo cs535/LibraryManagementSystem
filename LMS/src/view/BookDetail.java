@@ -77,7 +77,7 @@ public class BookDetail extends JFrame {
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.add(image_label, BorderLayout.CENTER);
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(12, 12, 176, 169);
+		panel.setBounds(12, 12, 103, 160);
 		contentPane.add(panel);
 		
 		JLabel lblNewLabel = new JLabel(this.book.getTitle());
