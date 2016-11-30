@@ -48,7 +48,7 @@ public class DataImporter {
 			    b.setAuthor(String.valueOf(arr[2]));
 			    b.setYear(String.valueOf(arr[3]));
 			    b.setPublishing_house(String.valueOf(arr[4]));
-			    b.setImage(String.valueOf(arr[5]));
+			    b.setImage(String.valueOf(arr[6]));
 			    bookList.add(b);
 	    	}
 	    } 	
