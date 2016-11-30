@@ -189,7 +189,7 @@ public class BookSearch extends JFrame {
 		panel_1.setLayout(null);
 
 		JLabel lblSearchResults = new JLabel("Search Results");
-		lblSearchResults.setBounds(26, 12, 600, 24);
+		lblSearchResults.setBounds(30, 0, 600, 33);
 		lblSearchResults.setBackground(Color.BLACK);
 		lblSearchResults.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSearchResults.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -212,20 +212,9 @@ public class BookSearch extends JFrame {
 				return getValueAt(0, column).getClass();
 			}
 		};
-		table = new JTable(new DefaultTableModel(datas, columnName));
-		table.setBackground(Color.WHITE);
-		table.setBounds(12, 48, 631, 600);
-		
 
-		
-		JScrollPane scrollPaneToTableSearchResults = new JScrollPane(table);
-		scrollPaneToTableSearchResults.setBounds(12, 48, 631, 600);
-		scrollPaneToTableSearchResults.setVisible(true);
-		add(scrollPaneToTableSearchResults);
-
-		panel_1.add(scrollPaneToTableSearchResults);
+		//panel_1.add(scrollPaneToTableSearchResults);
 		rowSorter = new TableRowSorter<>(tableSearchResults);
-		table.setRowSorter(rowSorter);
 
 		/* 							*/
 		/* 							*/
@@ -573,44 +562,19 @@ public class BookSearch extends JFrame {
 				}
 			}
 		};
+		table = new JTable(new DefaultTableModel(datas, columnName));
+		table.setBackground(Color.WHITE);
+		table.setBounds(12, 48, 631, 600);
+		
 
-		table.addMouseListener(mouseListenerEvents);
-
-		/* 									*/
-		/* 									*/
-		/* Search Result's Columns */
-		/* 									*/
-		/* 									*/
-
-		JLabel label_4 = new JLabel("Title");
-		label_4.setHorizontalAlignment(SwingConstants.CENTER);
-		label_4.setFont(new Font("Dialog", Font.BOLD, 12));
-		label_4.setBounds(22, 33, 117, 15);
-		panel_1.add(label_4);
-
-		JLabel lblAuthor = new JLabel("Author");
-		lblAuthor.setHorizontalAlignment(SwingConstants.CENTER);
-		lblAuthor.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblAuthor.setBounds(147, 33, 117, 15);
-		panel_1.add(lblAuthor);
-
-		JLabel lblYear = new JLabel("Year");
-		lblYear.setHorizontalAlignment(SwingConstants.CENTER);
-		lblYear.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblYear.setBounds(263, 33, 117, 15);
-		panel_1.add(lblYear);
-
-		JLabel lblIsbn = new JLabel("ISBN");
-		lblIsbn.setHorizontalAlignment(SwingConstants.CENTER);
-		lblIsbn.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblIsbn.setBounds(526, 33, 117, 15);
-		panel_1.add(lblIsbn);
-
-		JLabel lblPublisher = new JLabel("Publisher");
-		lblPublisher.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPublisher.setFont(new Font("Dialog", Font.BOLD, 12));
-		lblPublisher.setBounds(397, 33, 117, 15);
-		panel_1.add(lblPublisher);
+		
+		JScrollPane scrollPaneToTableSearchResults = new JScrollPane(table);
+		scrollPaneToTableSearchResults.setBounds(0, 33, 664, 627);
+		panel_1.add(scrollPaneToTableSearchResults);
+		scrollPaneToTableSearchResults.setVisible(true);
+		table.setRowSorter(rowSorter);
+		
+				table.addMouseListener(mouseListenerEvents);
 
 	}
 
