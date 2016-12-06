@@ -221,6 +221,8 @@ public class BookSearch extends JFrame {
 		/* Dynamic Search */
 		/* According to Title */
 		/* 							*/
+		
+		bookResults = new ArrayList<Book>(library.getBookList());
 
 		tfTitle.getDocument().addDocumentListener(new DocumentListener() {
 			@Override
