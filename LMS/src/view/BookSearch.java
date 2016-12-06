@@ -51,6 +51,7 @@ public class BookSearch extends JFrame {
 	private JTable table;
 	private TableRowSorter<DefaultTableModel> rowSorter;
 	private ArrayList<Book> bookResults;
+	private JButton btnExport;
 
 	/**
 	 * Launch the application.
@@ -79,7 +80,7 @@ public class BookSearch extends JFrame {
 
 		setTitle("Book Search");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 691, 921);
+		setBounds(100, 100, 691, 981);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -576,8 +577,17 @@ public class BookSearch extends JFrame {
 		scrollPaneToTableSearchResults.setVisible(true);
 		table.setRowSorter(rowSorter);
 		
+		btnExport = new JButton("Export");
+		btnExport.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				// TODO 
+			}
+		});
+		btnExport.setBounds(520, 894, 156, 48);
+		contentPane.add(btnExport);
+		
 				table.addMouseListener(mouseListenerEvents);
 
 	}
-
 }
