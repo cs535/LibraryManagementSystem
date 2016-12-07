@@ -11,7 +11,8 @@ public class Library
 	private ArrayList<Book> bookList;
 	private DataImporter dataImporter;
 
-    public Library() {
+    public Library() 
+    {
 		super();
 		this.bookList = new ArrayList<Book>();
 		this.dataImporter = new DataImporter();
@@ -23,7 +24,8 @@ public class Library
     	this.bookList = bookList;
     }
 
-	private void initialise() {
+	private void initialise() 
+	{
 		String fileName = "BXBooks.csv";
 		this.bookList = DataImporter.creatingData(fileName);
 	}
@@ -31,28 +33,32 @@ public class Library
 	/**
 	 * @return bookList
 	 */
-	public ArrayList<Book> getBookList() {
+	public ArrayList<Book> getBookList() 
+	{
 		return bookList;
 	}
 
 	/**
 	 * @param bookList
 	 */
-	public void setBookList(ArrayList<Book> bookList) {
+	public void setBookList(ArrayList<Book> bookList) 
+	{
 		this.bookList = bookList;
 	}
 
 	/**
 	 * @return dataImporter
 	 */
-	public DataImporter getDataImporter() {
+	public DataImporter getDataImporter()
+	{
 		return dataImporter;
 	}
 
 	/**
 	 * @param dataImporter
 	 */
-	public void setDataImporter(DataImporter dataImporter) {
+	public void setDataImporter(DataImporter dataImporter) 
+	{
 		this.dataImporter = dataImporter;
 	}
 
@@ -164,7 +170,8 @@ public class Library
 	 * @brief returns library's booklist's size
 	 * @return size
 	 */
-	public int getSize(){
+	public int getSize()
+	{
 		return bookList.size();
 	}
 }

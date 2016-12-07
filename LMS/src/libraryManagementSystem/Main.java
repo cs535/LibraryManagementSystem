@@ -5,15 +5,21 @@ import view.*;
 
 public class Main {
 	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
+	public static void main(String[] args) 
+	{
+		EventQueue.invokeLater(new Runnable() 
+		{
+			public void run() 
+			{
+				try 
+				{
 					Library library = new Library();
 					BookSearch frame = new BookSearch(library);
 					frame.setVisible(true);
 					
-				} catch (Exception e) {
+				} 
+				catch (Exception e) 
+				{
 					e.printStackTrace();
 				}
 			}

@@ -8,25 +8,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import libraryManagementSystem.Book;
 
-public class DataImporter {
+public class DataImporter
+{
 
-	public static ArrayList<Book> creatingData(String fileName) {
+	public static ArrayList<Book> creatingData(String fileName) 
+	{
 		
 		File fileFromDataReading = new File(fileName);
 		
 		FileReader fr = null;
 		
-		if(!fileFromDataReading.exists()){
+		if(!fileFromDataReading.exists())
+		{
 			
 			System.out.println("FAILED: " + fileName + " FILE does not exist");
 			return null;	
 		}
 		
-		try {		
+		try
+		{		
 			fr = new FileReader(fileFromDataReading);	
 		} 
 		
-		catch (FileNotFoundException e) {
+		catch (FileNotFoundException e) 
+		{
 			e.printStackTrace();
 		}
 		
@@ -34,7 +39,8 @@ public class DataImporter {
 			 
 		ArrayList<Book> bookList = new ArrayList<>();
 		
- 	    try {
+ 	    try 
+ 	    {
  	    	String str = null;
 		    while((str = br.readLine()) != null)
 		    {	
@@ -50,17 +56,19 @@ public class DataImporter {
 			    bookList.add(b);
 	    	}
 	    } 	
-    	catch (IOException e) {
+    	catch (IOException e)
+ 	    {
 	    	e.printStackTrace();
 	    }
 
 		
-		 try {
+		 try
+		 {
 		     br.close();
 			 fr.close();
 		 } 
-		 
-		 catch (IOException e) {
+		 catch (IOException e) 
+		 {
 			e.printStackTrace();
 		 }
 		 

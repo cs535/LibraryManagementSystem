@@ -3,7 +3,8 @@ package libraryManagementSystem;
 /**
  * class Book
  * */
-public class Book {
+public class Book 
+{
 
 	private String isbn;
 	private String title;
@@ -15,7 +16,8 @@ public class Book {
 	//constructor
 	public Book(){}
 	
-	public Book(String isbn, String title, String author, String year, String publishing_house, String image) {
+	public Book(String isbn, String title, String author, String year, String publishing_house, String image)
+	{
 		super();
 		this.isbn = isbn;
 		this.title = title;
@@ -26,66 +28,78 @@ public class Book {
 	}
 
 
-	public String getIsbn() {
+	public String getIsbn() 
+	{
 		return isbn;
 	}
 
-	public void setIsbn(String isbn) {
+	public void setIsbn(String isbn)
+	{
 		if (isbn != null)
 			this.isbn = isbn;
 		else
 			this.isbn = "";
 	}
 	
-	public String getTitle() {
+	public String getTitle()
+	{
 		return title;
 	}
 
-	public void setTitle(String title) {
+	public void setTitle(String title)
+	{
 		if (title != null)
 			this.title = title;
 		else
 			this.title = "";
 	}
 
-	public String getAuthor() {
+	public String getAuthor()
+	{
 		return author;
 	}
 
-	public void setAuthor(String author) {
+	public void setAuthor(String author) 
+	{
 		if (author != null)
 			this.author = author;
 		else
 			this.author = "";
 	}
 
-	public String getYear() {
+	public String getYear()
+	{
 		return year;
 	}
 
-	public void setYear(String year) {
+	public void setYear(String year)
+	{
 		if (year != null)
 			this.year = year;
 		else
 			this.year = "";
 	}
 
-	public String getPublishing_house() {
+	public String getPublishing_house()
+	{
 		return publishing_house;
 	}
 
-	public void setPublishing_house(String publishing_house) {
+	public void setPublishing_house(String publishing_house) 
+	{
 		if (publishing_house != null)
 			this.publishing_house = publishing_house;
 		else
 			this.publishing_house = "";
 	}
 
-	public String getImage() {
+	public String getImage()
+	{
 		return image;
 	}
 
-	public void setImage(String image) {
+	public void setImage(String image) 
+	{
 		if (image != null)
 			this.image = image;
 		else
@@ -93,7 +107,8 @@ public class Book {
 	}	
 	
 	@Override
-	public String toString() {
+	public String toString() 
+	{
 		return "ISBN: " + isbn + "\n" +
 			   "Book Title: " + title + "\n" +
 			   "Book Author: " + author + "\n" +
