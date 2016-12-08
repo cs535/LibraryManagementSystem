@@ -56,7 +56,7 @@ public class BookSearch extends JFrame {
 
 		setTitle("Book Search");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 691, 981);
+		setBounds(100, 100, 991, 981);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -64,7 +64,7 @@ public class BookSearch extends JFrame {
 
 		JPanel panel = new JPanel();
 		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(12, 12, 664, 198);
+		panel.setBounds(12, 12, 964, 198);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
@@ -77,12 +77,12 @@ public class BookSearch extends JFrame {
 		JLabel lblTitle = new JLabel("Title");
 		lblTitle.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblTitle.setFont(new Font("Dialog", Font.BOLD, 16));
-		lblTitle.setBounds(130, 22, 84, 32);
+		lblTitle.setBounds(280, 22, 84, 32);
 		panel.add(lblTitle);
 
 		tfTitle = new JTextField();
 		tfTitle.setColumns(10);
-		tfTitle.setBounds(250, 30, 198, 19);
+		tfTitle.setBounds(400, 30, 198, 19);
 		panel.add(tfTitle);
 
 		/* 					*/
@@ -94,12 +94,12 @@ public class BookSearch extends JFrame {
 		JLabel label = new JLabel("Author");
 		label.setHorizontalAlignment(SwingConstants.RIGHT);
 		label.setFont(new Font("Dialog", Font.BOLD, 16));
-		label.setBounds(130, 52, 84, 32);
+		label.setBounds(280, 52, 84, 32);
 		panel.add(label);
 
 		tfAuthor = new JTextField();
 		tfAuthor.setColumns(10);
-		tfAuthor.setBounds(250, 60, 198, 19);
+		tfAuthor.setBounds(400, 60, 198, 19);
 		panel.add(tfAuthor);
 
 		/* 					*/
@@ -111,12 +111,12 @@ public class BookSearch extends JFrame {
 		JLabel label_1 = new JLabel("Year");
 		label_1.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_1.setFont(new Font("Dialog", Font.BOLD, 16));
-		label_1.setBounds(130, 85, 84, 32);
+		label_1.setBounds(280, 85, 84, 32);
 		panel.add(label_1);
 
 		tfYear = new JTextField();
 		tfYear.setColumns(10);
-		tfYear.setBounds(250, 93, 198, 19);
+		tfYear.setBounds(400, 93, 198, 19);
 		panel.add(tfYear);
 
 		/* 								*/
@@ -128,12 +128,12 @@ public class BookSearch extends JFrame {
 		JLabel label_2 = new JLabel("Publisher");
 		label_2.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_2.setFont(new Font("Dialog", Font.BOLD, 16));
-		label_2.setBounds(130, 118, 84, 32);
+		label_2.setBounds(280, 118, 84, 32);
 		panel.add(label_2);
 
 		tfPublisher = new JTextField();
 		tfPublisher.setColumns(10);
-		tfPublisher.setBounds(250, 126, 198, 19);
+		tfPublisher.setBounds(400, 126, 198, 19);
 		panel.add(tfPublisher);
 
 		/* 					*/
@@ -145,12 +145,12 @@ public class BookSearch extends JFrame {
 		JLabel label_3 = new JLabel("ISBN");
 		label_3.setHorizontalAlignment(SwingConstants.RIGHT);
 		label_3.setFont(new Font("Dialog", Font.BOLD, 16));
-		label_3.setBounds(130, 154, 84, 32);
+		label_3.setBounds(280, 154, 84, 32);
 		panel.add(label_3);
 
 		tfISBN = new JTextField();
 		tfISBN.setColumns(10);
-		tfISBN.setBounds(250, 162, 198, 19);
+		tfISBN.setBounds(400, 162, 198, 19);
 		panel.add(tfISBN);
 
 		/* 							*/
@@ -161,12 +161,12 @@ public class BookSearch extends JFrame {
 
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(Color.LIGHT_GRAY);
-		panel_1.setBounds(12, 222, 664, 660);
+		panel_1.setBounds(12, 222, 964, 660);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 
 		JLabel lblSearchResults = new JLabel("Search Results");
-		lblSearchResults.setBounds(30, 0, 600, 33);
+		lblSearchResults.setBounds(30, 0, 900, 33);
 		lblSearchResults.setBackground(Color.BLACK);
 		lblSearchResults.setHorizontalAlignment(SwingConstants.CENTER);
 		lblSearchResults.setFont(new Font("Dialog", Font.BOLD, 16));
@@ -548,7 +548,7 @@ public class BookSearch extends JFrame {
 
 		
 		JScrollPane scrollPaneToTableSearchResults = new JScrollPane(table);
-		scrollPaneToTableSearchResults.setBounds(0, 33, 664, 627);
+		scrollPaneToTableSearchResults.setBounds(0, 33, 964, 627);
 		panel_1.add(scrollPaneToTableSearchResults);
 		scrollPaneToTableSearchResults.setVisible(true);
 		table.setRowSorter(rowSorter);
@@ -560,7 +560,7 @@ public class BookSearch extends JFrame {
 				// TODO 
 			}
 		});
-		btnExport.setBounds(520, 894, 156, 48);
+		btnExport.setBounds(520, 894, 456, 48);
 		contentPane.add(btnExport);
 		
 				table.addMouseListener(mouseListenerEvents);
