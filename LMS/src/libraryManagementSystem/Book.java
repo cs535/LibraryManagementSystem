@@ -1,8 +1,5 @@
 package libraryManagementSystem;
 
-/**
- * class Book
- * */
 public class Book 
 {
 
@@ -16,6 +13,14 @@ public class Book
 	//constructor
 	public Book(){}
 	
+	/**
+	 * @param isbn
+	 * @param title
+	 * @param author
+	 * @param year
+	 * @param publishing_house
+	 * @param image
+	 */
 	public Book(String isbn, String title, String author, String year, String publishing_house, String image)
 	{
 		super();
@@ -28,11 +33,17 @@ public class Book
 	}
 
 
+	/**
+	 * @return isbn
+	 */
 	public String getIsbn() 
 	{
 		return isbn;
 	}
 
+	/**
+	 * @param isbn
+	 */
 	public void setIsbn(String isbn)
 	{
 		if (isbn != null)
@@ -41,11 +52,17 @@ public class Book
 			this.isbn = "";
 	}
 	
+	/**
+	 * @return title
+	 */
 	public String getTitle()
 	{
 		return title;
 	}
 
+	/**
+	 * @param title
+	 */
 	public void setTitle(String title)
 	{
 		if (title != null)
@@ -54,11 +71,17 @@ public class Book
 			this.title = "";
 	}
 
+	/**
+	 * @return author
+	 */
 	public String getAuthor()
 	{
 		return author;
 	}
 
+	/**
+	 * @param author
+	 */
 	public void setAuthor(String author) 
 	{
 		if (author != null)
@@ -67,11 +90,17 @@ public class Book
 			this.author = "";
 	}
 
+	/**
+	 * @return year
+	 */
 	public String getYear()
 	{
 		return year;
 	}
 
+	/**
+	 * @param year
+	 */
 	public void setYear(String year)
 	{
 		if (year != null)
@@ -80,11 +109,17 @@ public class Book
 			this.year = "";
 	}
 
+	/**
+	 * @return publishing_house
+	 */
 	public String getPublishing_house()
 	{
 		return publishing_house;
 	}
 
+	/**
+	 * @param publishing_house
+	 */
 	public void setPublishing_house(String publishing_house) 
 	{
 		if (publishing_house != null)
@@ -93,11 +128,17 @@ public class Book
 			this.publishing_house = "";
 	}
 
+	/**
+	 * @return image
+	 */
 	public String getImage()
 	{
 		return image;
 	}
 
+	/**
+	 * @param image
+	 */
 	public void setImage(String image) 
 	{
 		if (image != null)

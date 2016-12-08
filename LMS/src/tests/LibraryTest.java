@@ -1,13 +1,8 @@
 package tests;
 
 import libraryManagementSystem.Book;
-import java.lang.annotation.Target;
 import java.util.ArrayList;
-
-import org.junit.*;
-
 import junit.framework.TestCase;
-
 import libraryManagementSystem.Library;
 
 public class LibraryTest extends TestCase {
@@ -19,10 +14,10 @@ public class LibraryTest extends TestCase {
 		ArrayList<Book> bookList = new ArrayList<Book>();
 		bookList.add(new Book("isbn1", "title1", "author1", "1", "house1", ""));
 		bookList.add(new Book("isbn2", "title1", "author2", "2", "house3", ""));
-		bookList.add(new Book("isbn2", "title1", "author3", "2", "house1", ""));
-		bookList.add(new Book("isbn3", "title2", "author1", "1", "house1", ""));
-		bookList.add(new Book("isbn4", "title3", "author1", "3", "house2", ""));
-		bookList.add(new Book("isbn5", "title3", "author3", "3", "house4", ""));
+		bookList.add(new Book("isbn3", "title1", "author3", "2", "house1", ""));
+		bookList.add(new Book("isbn4", "title2", "author1", "1", "house1", ""));
+		bookList.add(new Book("isbn5", "title3", "author1", "3", "house2", ""));
+		bookList.add(new Book("isbn6", "title3", "author3", "3", "house4", ""));
 		this.library = new Library(bookList);
 	}
 	

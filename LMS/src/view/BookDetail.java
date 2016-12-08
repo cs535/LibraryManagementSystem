@@ -15,7 +15,6 @@ import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URL;
 

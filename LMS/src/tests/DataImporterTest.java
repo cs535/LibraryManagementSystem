@@ -2,13 +2,7 @@ package tests;
 
 import libraryManagementSystem.Book;
 import libraryManagementSystem.DataImporter;
-
-import static org.junit.Assert.*;
-
 import java.util.ArrayList;
-
-import org.junit.Test;
-
 import junit.framework.TestCase;
 
 public class DataImporterTest extends TestCase {

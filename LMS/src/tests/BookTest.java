@@ -1,11 +1,7 @@
 package tests;
 
 import libraryManagementSystem.Book;
-
-import static org.junit.Assert.*;
-
 import org.junit.Test;
-
 import junit.framework.TestCase;
 
 public class BookTest extends TestCase {

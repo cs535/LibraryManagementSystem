@@ -11,16 +11,18 @@ import libraryManagementSystem.Book;
 public class DataImporter
 {
 
+	/**
+	 * @param fileName
+	 * @return bookList
+	 */
 	public static ArrayList<Book> creatingData(String fileName) 
 	{
-		
 		File fileFromDataReading = new File(fileName);
 		
 		FileReader fr = null;
 		
 		if(!fileFromDataReading.exists())
 		{
-			
 			System.out.println("FAILED: " + fileName + " FILE does not exist");
 			return null;	
 		}
@@ -29,14 +31,13 @@ public class DataImporter
 		{		
 			fr = new FileReader(fileFromDataReading);	
 		} 
-		
 		catch (FileNotFoundException e) 
 		{
 			e.printStackTrace();
 		}
 		
 		BufferedReader br = new BufferedReader(fr);
-			 
+
 		ArrayList<Book> bookList = new ArrayList<>();
 		
  	    try 
@@ -55,22 +56,21 @@ public class DataImporter
 			    b.setImage(String.valueOf(arr[6]));
 			    bookList.add(b);
 	    	}
-	    } 	
+	    }
     	catch (IOException e)
  	    {
 	    	e.printStackTrace();
 	    }
-
-		
-		 try
-		 {
-		     br.close();
-			 fr.close();
-		 } 
-		 catch (IOException e) 
-		 {
-			e.printStackTrace();
-		 }
+ 	    
+ 	    try
+ 	    {
+ 	    	br.close();
+			fr.close();
+		}
+ 	    catch (IOException e) 
+ 	    {
+ 	    	e.printStackTrace();
+		}
 		 
 		return bookList;
 	}

@@ -2,36 +2,12 @@ package view;
 
 import libraryManagementSystem.*;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.RowFilter;
-import javax.swing.border.EmptyBorder;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.event.TableModelListener;
-import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableModel;
-import javax.swing.table.TableRowSorter;
-import javax.swing.JLabel;
-
-import java.awt.Font;
-import java.awt.Dimension;
-
-import javax.swing.SwingConstants;
-import javax.swing.JTextField;
-import javax.swing.JButton;
-
-import java.awt.Color;
-
-import javax.swing.JTable;
-
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.border.*;
+import javax.swing.event.*;
+import javax.swing.table.*;
+import java.awt.event.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
