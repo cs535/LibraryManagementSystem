@@ -571,6 +571,7 @@ public class BookSearch extends JFrame {
 			}
 		});
 		btnExport.setBounds(520, 894, 456, 48);
+		btnExport.setToolTipText("Export Search Results");
 		contentPane.add(btnExport);
 		
 				table.addMouseListener(mouseListenerEvents);
