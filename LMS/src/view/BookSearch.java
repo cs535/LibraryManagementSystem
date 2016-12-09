@@ -11,6 +11,7 @@ import java.awt.event.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 
@@ -553,15 +554,23 @@ public class BookSearch extends JFrame {
 		scrollPaneToTableSearchResults.setVisible(true);
 		table.setRowSorter(rowSorter);
 		
+		
+		/*
+		 * @ export search results into the project path
+		 * @ example: /home/songulab/git/CS535-LibraryManagementSystem/LMS/export.txt
+		 * */
 		btnExport = new JButton("Export");
 		btnExport.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				// TODO 
+				File currentDirFile = new File("");
+				String projectPath = currentDirFile.getAbsolutePath();
+				String exportPath = projectPath + "/";
+				DataExporter exportData = new DataExporter();
+				exportData.writeDataToFile("export.txt", exportPath,bookResults);
 			}
 		});
 		btnExport.setBounds(520, 894, 456, 48);
-		btnExport.setToolTipText("Export Search Results");
 		contentPane.add(btnExport);
 		
 				table.addMouseListener(mouseListenerEvents);
