@@ -218,16 +218,20 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
+			}
+
+			private void bookCreation(int i) {
+				Book b = new Book();
+				b.setTitle((String)table.getValueAt(i, 0));
+				b.setAuthor((String)table.getValueAt(i, 1));
+				b.setYear((String)table.getValueAt(i, 2));
+				b.setPublishing_house((String)table.getValueAt(i, 3));
+				b.setIsbn((String)table.getValueAt(i, 4));
+				b.setImage((String)table.getValueAt(i, 5));
+				bookResults.add(b);
 			}
 
 			@Override
@@ -244,14 +248,7 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
 			}
@@ -285,16 +282,20 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
+			}
+
+			private void bookCreation(int i) {
+				Book b = new Book();
+				b.setTitle((String)table.getValueAt(i, 0));
+				b.setAuthor((String)table.getValueAt(i, 1));
+				b.setYear((String)table.getValueAt(i, 2));
+				b.setPublishing_house((String)table.getValueAt(i, 3));
+				b.setIsbn((String)table.getValueAt(i, 4));
+				b.setImage((String)table.getValueAt(i, 5));
+				bookResults.add(b);
 			}
 
 			@Override
@@ -311,14 +312,7 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
 			}
@@ -352,16 +346,20 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
+			}
+
+			private void bookCreation(int i) {
+				Book b = new Book();
+				b.setTitle((String)table.getValueAt(i, 0));
+				b.setAuthor((String)table.getValueAt(i, 1));
+				b.setYear((String)table.getValueAt(i, 2));
+				b.setPublishing_house((String)table.getValueAt(i, 3));
+				b.setIsbn((String)table.getValueAt(i, 4));
+				b.setImage((String)table.getValueAt(i, 5));
+				bookResults.add(b);
 			}
 
 			@Override
@@ -378,14 +376,7 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
 			}
@@ -419,16 +410,20 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
+			}
+
+			private void bookCreation(int i) {
+				Book b = new Book();
+				b.setTitle((String)table.getValueAt(i, 0));
+				b.setAuthor((String)table.getValueAt(i, 1));
+				b.setYear((String)table.getValueAt(i, 2));
+				b.setPublishing_house((String)table.getValueAt(i, 3));
+				b.setIsbn((String)table.getValueAt(i, 4));
+				b.setImage((String)table.getValueAt(i, 5));
+				bookResults.add(b);
 			}
 
 			@Override
@@ -445,14 +440,7 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
 			}
@@ -486,16 +474,20 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				//system.out.println(bookResults);
+			}
+
+			private void bookCreation(int i) {
+				Book b = new Book();
+				b.setTitle((String)table.getValueAt(i, 0));
+				b.setAuthor((String)table.getValueAt(i, 1));
+				b.setYear((String)table.getValueAt(i, 2));
+				b.setPublishing_house((String)table.getValueAt(i, 3));
+				b.setIsbn((String)table.getValueAt(i, 4));
+				b.setImage((String)table.getValueAt(i, 5));
+				bookResults.add(b);
 			}
 
 			@Override
@@ -512,14 +504,7 @@ public class BookSearch extends JFrame {
 				bookResults = new ArrayList<Book>();
 				for (int i = 0; i < rowCount; i++)
 				{
-					Book b = new Book();
-					b.setTitle((String)table.getValueAt(i, 0));
-					b.setAuthor((String)table.getValueAt(i, 1));
-					b.setYear((String)table.getValueAt(i, 2));
-					b.setPublishing_house((String)table.getValueAt(i, 3));
-					b.setIsbn((String)table.getValueAt(i, 4));
-					b.setImage((String)table.getValueAt(i, 5));
-					bookResults.add(b);
+					bookCreation(i);
 				}
 				////system.out.println(bookResults);
 			}
