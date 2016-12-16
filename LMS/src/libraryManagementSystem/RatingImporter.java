@@ -40,13 +40,13 @@ public class RatingImporter {
  	    	String str = null;
 		    while((str = br.readLine()) != null)
 		    {	
-		    	Rating r = new Rating();
+		    	Rating rate = new Rating();
 			    str = str.replace('"', ' ');
 			    String[] arr = str.split(";");			    
-			    r.setUserId(String.valueOf(arr[0]).replace(':', ' '));
-			    r.setBookId(String.valueOf(arr[1]));
-			    r.setRating(Integer.valueOf(arr[2]));
-			    ratingList.add(r);
+			    rate.setUserId(String.valueOf(arr[0]).replace(':', ' '));
+			    rate.setBookId(String.valueOf(arr[1]));
+			    rate.setRating(Integer.valueOf(arr[2]));
+			    ratingList.add(rate);
 	    	}
 	    }
     	catch (IOException e)
