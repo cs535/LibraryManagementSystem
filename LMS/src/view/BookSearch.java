@@ -3,14 +3,13 @@ package view;
 import libraryManagementSystem.*;
 
 import java.awt.*;
+
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.event.*;
 import javax.swing.table.*;
+
 import java.awt.event.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.awt.event.ActionEvent;
@@ -545,16 +544,14 @@ public class BookSearch extends JFrame {
 		 * @ example: /home/songulab/git/CS535-LibraryManagementSystem/LMS/export.txt
 		 * */
 		btnExport = new JButton("Export");
-		btnExport.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				File currentDirFile = new File("");
-				String projectPath = currentDirFile.getAbsolutePath();
-				String exportPath = projectPath + "/";
-				DataExporter exportData = new DataExporter();
-				exportData.writeDataToFile("export.txt", exportPath,bookResults);
-			}
-		});
+        btnExport.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                JFileChooser saveFile = new JFileChooser();
+                saveFile.showSaveDialog(null);
+            }
+        });
 		btnExport.setBounds(520, 894, 456, 48);
 		btnExport.setToolTipText("Export Search Results");
 		contentPane.add(btnExport);
