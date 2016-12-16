@@ -81,7 +81,6 @@ public class BookDetail extends JFrame {
 		panel.setBounds(12, 12, 125, 160);
 		contentPane.add(panel);
 		
-		
 		JLabel lblNewLabel = new JLabel(this.book.getTitle());
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);

@@ -3,7 +3,7 @@ package libraryManagementSystem;
 public class Rating {
 
 	private String userId;
-	private String movieId;
+	private String bookId;
 	private int rating;
 	
 	public Rating(){}
@@ -12,8 +12,8 @@ public class Rating {
 		return userId;
 	}
 
-	public String getMovieId() {
-		return movieId;
+	public String getMBookId() {
+		return bookId;
 	}
 
 	public int getRating() {
@@ -24,8 +24,8 @@ public class Rating {
 		this.userId = userId;
 	}
 
-	public void setMovieId(String movieId) {
-		this.movieId = movieId;
+	public void setBookId(String bookId) {
+		this.bookId = bookId;
 	}
 
 	public void setRating(int rating) {
