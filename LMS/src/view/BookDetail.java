@@ -49,7 +49,7 @@ public class BookDetail extends JFrame {
 		
 		setTitle("Book Detail");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 702, 600);
+		setBounds(100, 100, 715, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -80,6 +80,37 @@ public class BookDetail extends JFrame {
 		panel.add(image_label, BorderLayout.CENTER);
 		panel.setBounds(12, 12, 125, 160);
 		contentPane.add(panel);
+		
+		JLabel recommendedBookTitle = new JLabel("Recommended Book");
+		recommendedBookTitle.setFont(new Font("Dialog", Font.BOLD, 20));
+		recommendedBookTitle.setHorizontalAlignment(SwingConstants.RIGHT);
+		recommendedBookTitle.setBounds(230, 363, 250, 32);
+		contentPane.add(recommendedBookTitle);
+		
+		JPanel recommendedBook1 = new JPanel();
+		recommendedBook1.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
+		recommendedBook1.setBounds(15, 400, 125, 160);
+		contentPane.add(recommendedBook1);
+		
+		JPanel recommendedBook2 = new JPanel();
+		recommendedBook2.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
+		recommendedBook2.setBounds(155, 400, 125, 160);
+		contentPane.add(recommendedBook2);
+		
+		JPanel recommendedBook3 = new JPanel();
+		recommendedBook3.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
+		recommendedBook3.setBounds(295, 400, 125, 160);
+		contentPane.add(recommendedBook3);
+
+		JPanel recommendedBook4 = new JPanel();
+		recommendedBook4.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
+		recommendedBook4.setBounds(435, 400, 125, 160);
+		contentPane.add(recommendedBook4);
+
+		JPanel recommendedBook5 = new JPanel();
+		recommendedBook5.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
+		recommendedBook5.setBounds(575, 400, 125, 160);
+		contentPane.add(recommendedBook5);
 		
 		JLabel lblNewLabel = new JLabel(this.book.getTitle());
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
