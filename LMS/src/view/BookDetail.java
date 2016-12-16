@@ -49,7 +49,7 @@ public class BookDetail extends JFrame {
 		
 		setTitle("Book Detail");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 701, 412);
+		setBounds(100, 100, 702, 600);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -70,14 +70,17 @@ public class BookDetail extends JFrame {
         	System.out.println("hataaaa \n");
         	e.printStackTrace();
         }
+        
+
+
 
         JLabel image_label = new JLabel(new ImageIcon(image));
 
 		JPanel panel = new JPanel(new BorderLayout());
 		panel.add(image_label, BorderLayout.CENTER);
-		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(12, 12, 103, 160);
+		panel.setBounds(12, 12, 125, 160);
 		contentPane.add(panel);
+		
 		
 		JLabel lblNewLabel = new JLabel(this.book.getTitle());
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
