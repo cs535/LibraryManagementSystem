@@ -107,9 +107,7 @@ public class DataUpload extends JFrame implements ActionListener {
             int returnVal = jFileChooser.showOpenDialog(DataUpload.this);
             if(returnVal == JFileChooser.APPROVE_OPTION){
             	uploadFilePath = jFileChooser.getSelectedFile().getParent() + "/" + jFileChooser.getSelectedFile().getName();
-            	System.out.println(uploadFilePath);
                 File selectedDataFile = jFileChooser.getSelectedFile();
-                System.out.println(selectedDataFile.getName());
                 textField.setText("Selected file: " + selectedDataFile.getName());
             }else if(returnVal == JFileChooser.CANCEL_OPTION){
             	textField.setText("Cancelled");
@@ -121,7 +119,6 @@ public class DataUpload extends JFrame implements ActionListener {
         }
         
         if(e.getSource() == uploadButton){
-        	System.out.println("upload button clicked");
         	try 
 			{
         		if (uploadFilePath == null){
