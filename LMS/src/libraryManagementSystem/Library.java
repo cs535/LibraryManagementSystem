@@ -17,14 +17,14 @@ public class Library
 	private HashMap<String, Book> bookMap;
 	private ItemBasedCFAnalyzeEngine recommendationEngine;
 
-    public Library() 
+    public Library(String filename) 
     {
 		super();
 		this.bookList = new ArrayList<Book>();
 		this.dataImporter = new DataImporter();
 		this.bookMap = new HashMap<String, Book>(); 
 		this.recommendationEngine = new ItemBasedCFAnalyzeEngine(this);
-		this.initialise();
+		this.initialise(filename);
 	}
     
     public Library(ArrayList<Book> bookList)
@@ -32,10 +32,10 @@ public class Library
     	this.bookList = bookList;
     }
 
-	private void initialise() 
+	private void initialise(String fileName) 
 	{
 		//String fileName = "BXBooks.csv";
-		String fileName = "BXBooks_Complete.csv";
+		//String fileName = "BXBooks_Complete.csv"; 
 		this.bookList = DataImporter.creatingData(fileName);
 		
 		for (int i=0; i<this.bookList.size(); i++)
