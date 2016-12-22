@@ -1,5 +1,7 @@
 package libraryManagementSystem;
 
+import java.util.ArrayList;
+
 public class Book 
 {
 
@@ -10,8 +12,13 @@ public class Book
 	private String publishing_house;
 	private String image;
 	
+	private ArrayList<Rating> ratings;
+	
 	//constructor
-	public Book(){}
+	public Book()
+	{
+		this.ratings = new ArrayList<Rating>();
+	}
 	
 	/**
 	 * @param isbn
@@ -29,9 +36,24 @@ public class Book
 		this.author = author;
 		this.year = year;
 		this.publishing_house = publishing_house;
-		this.image = image;
+		this.image = image; 
+		this.ratings = new ArrayList<Rating>();
 	}
 
+	public void addRating(Rating rating)
+	{
+		if (rating == null || this.ratings == null)
+		{
+			System.out.println("Error");
+		}
+		
+		this.ratings.add(rating);
+	}
+	
+	public ArrayList<Rating> getRatings()
+	{
+		return this.ratings;
+	}
 
 	/**
 	 * @return isbn
@@ -47,7 +69,7 @@ public class Book
 	public void setIsbn(String isbn)
 	{
 		if (isbn != null)
-			this.isbn = isbn;
+			this.isbn = isbn.trim();
 		else
 			this.isbn = "";
 	}
@@ -66,7 +88,7 @@ public class Book
 	public void setTitle(String title)
 	{
 		if (title != null)
-			this.title = title;
+			this.title = title.trim();
 		else
 			this.title = "";
 	}
@@ -85,7 +107,7 @@ public class Book
 	public void setAuthor(String author) 
 	{
 		if (author != null)
-			this.author = author;
+			this.author = author.trim();
 		else
 			this.author = "";
 	}
@@ -104,7 +126,7 @@ public class Book
 	public void setYear(String year)
 	{
 		if (year != null)
-			this.year = year;
+			this.year = year.trim();
 		else
 			this.year = "";
 	}
@@ -123,7 +145,7 @@ public class Book
 	public void setPublishing_house(String publishing_house) 
 	{
 		if (publishing_house != null)
-			this.publishing_house = publishing_house;
+			this.publishing_house = publishing_house.trim();
 		else
 			this.publishing_house = "";
 	}
@@ -142,7 +164,7 @@ public class Book
 	public void setImage(String image) 
 	{
 		if (image != null)
-			this.image = image;
+			this.image = image.trim();
 		else
 			this.image = "";
 	}	

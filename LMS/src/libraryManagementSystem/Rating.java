@@ -2,33 +2,38 @@ package libraryManagementSystem;
 
 public class Rating {
 
-	private String userId;
-	private String bookId;
-	private int rating;
+	private String userId; 
+	private int ratingP;
+	private Book book;
 	
-	public Rating(){}
+	public Rating(String userId, int rating, Book book)
+	{
+		this.userId = userId;
+		
+		if (rating < 5)
+		{
+			this.ratingP = 1;
+		}
+		else 
+		{
+			this.ratingP = 2;
+		}
+		
+		
+		
+		this.book = book;	
+	}
 	
 	public String getUserId() {
 		return userId;
-	}
-
-	public String getMBookId() {
-		return bookId;
-	}
-
+	}  
+	
 	public int getRating() {
-		return rating;
-	}
-
-	public void setUserId(String userId) {
-		this.userId = userId;
-	}
-
-	public void setBookId(String bookId) {
-		this.bookId = bookId;
-	}
-
-	public void setRating(int rating) {
-		this.rating = rating;
+		return ratingP;
+	} 
+	
+	public Book getBook()
+	{
+		return this.book;
 	}
 }

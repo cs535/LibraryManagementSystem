@@ -17,12 +17,14 @@ import java.awt.Font;
 import java.awt.Image;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 
 public class BookDetail extends JFrame {
 
 	private JPanel contentPane;
 	
 	private Book book;
+	private Library library;
 
 	/**
 	 * Launch the application.
@@ -31,8 +33,9 @@ public class BookDetail extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Book book = new Book();
-					BookDetail frame = new BookDetail(book);
+					Library library = new Library();
+					Book book = new Book(); 
+					BookDetail frame = new BookDetail(book, library);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -44,8 +47,9 @@ public class BookDetail extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public BookDetail(Book book) {
+	public BookDetail(Book book, Library library) {
 		this.book = book;
+		this.library = library;
 		
 		setTitle("Book Detail");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -161,5 +165,20 @@ public class BookDetail extends JFrame {
 		lblIsbn.setFont(new Font("Dialog", Font.BOLD, 20));
 		lblIsbn.setBounds(12, 328, 176, 32);
 		contentPane.add(lblIsbn);
+		
+		
+		ArrayList<Book> recommendedBookList = library.getRecommendedBooksFor(book);
+		
+		
+		for (Book tempBook : recommendedBookList)
+		{
+			System.out.println(tempBook.getTitle());
+		}
+		
+		
+		
+		
+		
+		
 	}
 }

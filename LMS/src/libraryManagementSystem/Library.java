@@ -1,6 +1,10 @@
 package libraryManagementSystem;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+
 import libraryManagementSystem.Book;
 import libraryManagementSystem.DataImporter;
 
@@ -9,12 +13,17 @@ public class Library
 {
 	private ArrayList<Book> bookList;
 	private DataImporter dataImporter;
+	private ArrayList<Rating> ratingList;
+	private HashMap<String, Book> bookMap;
+	private ItemBasedCFAnalyzeEngine recommendationEngine;
 
     public Library() 
     {
 		super();
 		this.bookList = new ArrayList<Book>();
 		this.dataImporter = new DataImporter();
+		this.bookMap = new HashMap<String, Book>(); 
+		this.recommendationEngine = new ItemBasedCFAnalyzeEngine(this);
 		this.initialise();
 	}
     
@@ -26,9 +35,22 @@ public class Library
 	private void initialise() 
 	{
 		String fileName = "BXBooks.csv";
+		//String fileName = "BXBooks_Complete.csv";
 		this.bookList = DataImporter.creatingData(fileName);
+		
+		for (int i=0; i<this.bookList.size(); i++)
+		{
+			this.bookMap.put(this.bookList.get(i).getIsbn(), this.bookList.get(i));
+		}
+
+		this.ratingList = RatingImporter.readRatingData(this);
 	}
 
+	public ArrayList<Rating> getRatingList()
+	{
+		return this.ratingList;
+	}
+	
 	/**
 	 * @return bookList
 	 */
@@ -43,6 +65,12 @@ public class Library
 	public void setBookList(ArrayList<Book> bookList) 
 	{
 		this.bookList = bookList;
+	}
+	
+	
+	public Book getBookByID(String bookID)
+	{ 
+		return this.bookMap.get(bookID);
 	}
 
 	/**
@@ -95,5 +123,10 @@ public class Library
 	public int getSize()
 	{
 		return bookList.size();
+	}
+	
+	public ArrayList<Book> getRecommendedBooksFor(Book queryBook)
+	{
+		return this.recommendationEngine.getRecommendedBooksFor(queryBook, 5);
 	}
 }

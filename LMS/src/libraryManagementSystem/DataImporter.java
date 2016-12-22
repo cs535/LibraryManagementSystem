@@ -48,12 +48,12 @@ public class DataImporter
 			    Book b = new Book();
 			    str = str.replace('"', ':');
 			    String[] arr = str.split(":;:");			    
-			    b.setIsbn(String.valueOf(arr[0]).replace(':', ' '));
-			    b.setTitle(String.valueOf(arr[1]));
-			    b.setAuthor(String.valueOf(arr[2]));
-			    b.setYear(String.valueOf(arr[3]));
-			    b.setPublishing_house(String.valueOf(arr[4]));
-			    b.setImage(String.valueOf(arr[6]));
+			    b.setIsbn(String.valueOf(arr[0]).replace(':', ' ').trim());
+			    b.setTitle(String.valueOf(arr[1]).trim());
+			    b.setAuthor(String.valueOf(arr[2]).trim());
+			    b.setYear(String.valueOf(arr[3]).trim());
+			    b.setPublishing_house(String.valueOf(arr[4]).trim());
+			    b.setImage(String.valueOf(arr[6]).trim());
 			    bookList.add(b);
 	    	}
 	    }

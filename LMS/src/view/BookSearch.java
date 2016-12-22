@@ -29,6 +29,7 @@ public class BookSearch extends JFrame {
 	private TableRowSorter<DefaultTableModel> rowSorter;
 	private ArrayList<Book> bookResults;
 	private JButton btnExport;
+	BookDetail previousBookDetail = null;
 
 	/**
 	 * Launch the application.
@@ -51,7 +52,7 @@ public class BookSearch extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public BookSearch(Library library) {
+	public BookSearch(final Library library) {
 
 		this.library = library;
 
@@ -224,14 +225,9 @@ public class BookSearch extends JFrame {
 			}
 
 			private void bookCreation(int i) {
-				Book b = new Book();
-				b.setTitle((String)table.getValueAt(i, 0));
-				b.setAuthor((String)table.getValueAt(i, 1));
-				b.setYear((String)table.getValueAt(i, 2));
-				b.setPublishing_house((String)table.getValueAt(i, 3));
-				b.setIsbn((String)table.getValueAt(i, 4));
-				b.setImage((String)table.getValueAt(i, 5));
-				bookResults.add(b);
+
+				Book b = library.getBookByID((String)table.getValueAt(i, 4)); 
+				bookResults.add(b); 
 			}
 
 			@Override
@@ -288,14 +284,9 @@ public class BookSearch extends JFrame {
 			}
 
 			private void bookCreation(int i) {
-				Book b = new Book();
-				b.setTitle((String)table.getValueAt(i, 0));
-				b.setAuthor((String)table.getValueAt(i, 1));
-				b.setYear((String)table.getValueAt(i, 2));
-				b.setPublishing_house((String)table.getValueAt(i, 3));
-				b.setIsbn((String)table.getValueAt(i, 4));
-				b.setImage((String)table.getValueAt(i, 5));
-				bookResults.add(b);
+
+				Book b = library.getBookByID((String)table.getValueAt(i, 4)); 
+				bookResults.add(b); 
 			}
 
 			@Override
@@ -352,14 +343,9 @@ public class BookSearch extends JFrame {
 			}
 
 			private void bookCreation(int i) {
-				Book b = new Book();
-				b.setTitle((String)table.getValueAt(i, 0));
-				b.setAuthor((String)table.getValueAt(i, 1));
-				b.setYear((String)table.getValueAt(i, 2));
-				b.setPublishing_house((String)table.getValueAt(i, 3));
-				b.setIsbn((String)table.getValueAt(i, 4));
-				b.setImage((String)table.getValueAt(i, 5));
-				bookResults.add(b);
+
+				Book b = library.getBookByID((String)table.getValueAt(i, 4)); 
+				bookResults.add(b); 
 			}
 
 			@Override
@@ -416,14 +402,9 @@ public class BookSearch extends JFrame {
 			}
 
 			private void bookCreation(int i) {
-				Book b = new Book();
-				b.setTitle((String)table.getValueAt(i, 0));
-				b.setAuthor((String)table.getValueAt(i, 1));
-				b.setYear((String)table.getValueAt(i, 2));
-				b.setPublishing_house((String)table.getValueAt(i, 3));
-				b.setIsbn((String)table.getValueAt(i, 4));
-				b.setImage((String)table.getValueAt(i, 5));
-				bookResults.add(b);
+
+				Book b = library.getBookByID((String)table.getValueAt(i, 4)); 
+				bookResults.add(b); 
 			}
 
 			@Override
@@ -480,14 +461,9 @@ public class BookSearch extends JFrame {
 			}
 
 			private void bookCreation(int i) {
-				Book b = new Book();
-				b.setTitle((String)table.getValueAt(i, 0));
-				b.setAuthor((String)table.getValueAt(i, 1));
-				b.setYear((String)table.getValueAt(i, 2));
-				b.setPublishing_house((String)table.getValueAt(i, 3));
-				b.setIsbn((String)table.getValueAt(i, 4));
-				b.setImage((String)table.getValueAt(i, 5));
-				bookResults.add(b);
+
+				Book b = library.getBookByID((String)table.getValueAt(i, 4)); 
+				bookResults.add(b); 
 			}
 
 			@Override
@@ -517,12 +493,25 @@ public class BookSearch extends JFrame {
 			}
 		});
 		
+		
 		MouseListener mouseListenerEvents = new MouseAdapter() {
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() == 1) { // double click detection
 					JTable target = (JTable) e.getSource();
 					int row = target.getSelectedRow();
-					BookDetail bookDetail = new BookDetail(bookResults.get(row));
+					BookDetail bookDetail = new BookDetail(bookResults.get(row), library);
+					if (previousBookDetail != null)
+					{ 
+						previousBookDetail.setVisible(false); //you can't see me!
+						previousBookDetail.dispose(); //Destroy the JFrame object;
+						previousBookDetail = null;
+						previousBookDetail = bookDetail;
+					}
+					else
+					{
+						previousBookDetail = bookDetail;
+					}
+					
 					bookDetail.setVisible(true);
 				}
 			}
