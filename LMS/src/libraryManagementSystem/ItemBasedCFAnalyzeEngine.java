@@ -16,6 +16,7 @@ public class ItemBasedCFAnalyzeEngine
 		this.library = library;
 	} 
 	
+	// The function return the top recommended book list
 	public ArrayList<Book> getRecommendedBooksFor(Book queryBook, int requestedBookCount)
 	{ 
 		ArrayList<Book> recommendationCandidates = new ArrayList<Book>(); 
@@ -51,6 +52,7 @@ public class ItemBasedCFAnalyzeEngine
 		return topRecommendedBooks;
 	}  
 	
+	// Return all recommendation candidates which are the most
 	private ArrayList<Book> getTopRecommendedBooks(ArrayList<Book> recommendationCandidates, int requestedBookCount)
 	{
 		Map<String, Integer> occurrencehash = constructOccurencesHash(recommendationCandidates);
@@ -91,6 +93,7 @@ public class ItemBasedCFAnalyzeEngine
 		return recommendedBooks;
 	}
 	 
+	// Which book was voted how many times
 	private Map<String, Integer> constructOccurencesHash(ArrayList<Book> recommendationCandidates)
 	{
 		Map<String, Integer> occurrencehash = new HashMap<String, Integer>();
@@ -110,6 +113,7 @@ public class ItemBasedCFAnalyzeEngine
 		return occurrencehash;
 	}
 	
+	// Get the other books which receive the same vote from the same user
 	private ArrayList<Book> getTheOtherBooksWhichAreRatedSamePointByUser(Book bookToExclude, String userId, int rating)
 	{ 
 		 ArrayList<Book> bookList = new ArrayList<Book>(); 
