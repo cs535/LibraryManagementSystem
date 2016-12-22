@@ -33,7 +33,7 @@ public class BookDetail extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Library library = new Library();
+					Library library = new Library("/home/songulab/workspace/Books3.csv");
 					Book book = new Book(); 
 					BookDetail frame = new BookDetail(book, library);
 					frame.setVisible(true);

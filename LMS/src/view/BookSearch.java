@@ -38,7 +38,7 @@ public class BookSearch extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Library library = new Library();
+					Library library = new Library("/home/songulab/workspace/Books3.csv");
 					BookSearch frame = new BookSearch(library);
 					frame.setVisible(true);
 

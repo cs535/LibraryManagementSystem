@@ -13,8 +13,7 @@ public class Main {
 			{
 				try 
 				{
-					Library library = new Library();
-					BookSearch frame = new BookSearch(library);
+					DataUpload frame = new DataUpload();
 					frame.setVisible(true);
 				} 
 				catch (Exception e) 
