@@ -30,6 +30,8 @@ public class DataUpload extends JFrame implements ActionListener {
 	private JButton uploadButton;
 	private JFileChooser jFileChooser;
 	private String uploadFilePath;
+	
+	private BookSearch previousBookSearch = null;
 
 	/**
 	 * Launch the application.
@@ -125,8 +127,19 @@ public class DataUpload extends JFrame implements ActionListener {
         			uploadFilePath = "BXBooks.csv";
         		}
 				Library library = new Library(uploadFilePath);
-				BookSearch frame = new BookSearch(library);
-				frame.setVisible(true);
+				BookSearch bookSearch = new BookSearch(library);
+				if (previousBookSearch != null)
+				{ 
+					previousBookSearch.setVisible(false); //you can't see me!
+					previousBookSearch.dispose(); //Destroy the JFrame object;
+					previousBookSearch = null;
+					previousBookSearch = bookSearch;
+				}
+				else
+				{
+					previousBookSearch = bookSearch;
+				}
+				bookSearch.setVisible(true);
 			} 
 			catch (Exception ex) 
 			{
