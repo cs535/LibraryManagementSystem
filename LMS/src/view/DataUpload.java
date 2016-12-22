@@ -58,7 +58,7 @@ public class DataUpload extends JFrame implements ActionListener {
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
-		setTitle("Book Detail");
+		setTitle("Import Data Set");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 715, 600);
 		
