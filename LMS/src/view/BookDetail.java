@@ -33,7 +33,7 @@ public class BookDetail extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Library library = new Library("/home/songulab/workspace/Books3.csv");
+					Library library = new Library("Books3.csv");
 					Book book = new Book(); 
 					BookDetail frame = new BookDetail(book, library);
 					frame.setVisible(true);
@@ -60,7 +60,7 @@ public class BookDetail extends JFrame {
 		contentPane.setLayout(null);
 		
 		Image image = null;
-		String path = "http://images.amazon.com/images/P/0449906736.01.THUMBZZZ.jpg";
+		String path = "http://hdimagesnew.com/wp-content/uploads/2016/09/image-not-found-i19.png";
 		
 		if (this.book.getImage() != null)
 		{
@@ -85,36 +85,20 @@ public class BookDetail extends JFrame {
 		panel.setBounds(12, 12, 125, 160);
 		contentPane.add(panel);
 		
-		JLabel recommendedBookTitle = new JLabel("Recommended Book");
+		JLabel recommendedBookTitle = new JLabel("Recommended Books");
 		recommendedBookTitle.setFont(new Font("Dialog", Font.BOLD, 20));
 		recommendedBookTitle.setHorizontalAlignment(SwingConstants.RIGHT);
 		recommendedBookTitle.setBounds(230, 363, 250, 32);
 		contentPane.add(recommendedBookTitle);
 		
-		JPanel recommendedBook1 = new JPanel();
-		recommendedBook1.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
-		recommendedBook1.setBounds(15, 400, 125, 160);
-		contentPane.add(recommendedBook1);
 		
-		JPanel recommendedBook2 = new JPanel();
-		recommendedBook2.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
-		recommendedBook2.setBounds(155, 400, 125, 160);
-		contentPane.add(recommendedBook2);
+
 		
-		JPanel recommendedBook3 = new JPanel();
-		recommendedBook3.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
-		recommendedBook3.setBounds(295, 400, 125, 160);
-		contentPane.add(recommendedBook3);
 
-		JPanel recommendedBook4 = new JPanel();
-		recommendedBook4.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
-		recommendedBook4.setBounds(435, 400, 125, 160);
-		contentPane.add(recommendedBook4);
 
-		JPanel recommendedBook5 = new JPanel();
-		recommendedBook5.setBackground(Color.LIGHT_GRAY);	//when book images placed this color will be removed
-		recommendedBook5.setBounds(575, 400, 125, 160);
-		contentPane.add(recommendedBook5);
+
+
+
 		
 		JLabel lblNewLabel = new JLabel(this.book.getTitle());
 		lblNewLabel.setFont(new Font("Dialog", Font.BOLD, 25));
@@ -168,7 +152,142 @@ public class BookDetail extends JFrame {
 		
 		
 		ArrayList<Book> recommendedBookList = library.getRecommendedBooksFor(book);
+		System.out.println(recommendedBookList.size() + "  asdasdasdasd");
 		
+		/* Recommended Book 1*/
+		
+		Image recommendedBookImage1 = null;
+		String path1 = "http://hdimagesnew.com/wp-content/uploads/2016/09/image-not-found-i19.png";
+		
+		if ((recommendedBookList.size() > 0) && (recommendedBookList.get(0).getImage() != null))
+		{
+			path1 = recommendedBookList.get(0).getImage();
+		}
+		
+        try {
+            URL url = new URL(path1);
+            recommendedBookImage1 = ImageIO.read(url);
+        } catch (IOException e) {
+        	System.out.println("hataaaa \n");
+        	e.printStackTrace();
+        }
+        
+
+
+
+        JLabel recommendedBookLabel1 = new JLabel(new ImageIcon(recommendedBookImage1));
+		
+		JPanel recommendedBook1 = new JPanel();
+		recommendedBook1.add(recommendedBookLabel1, BorderLayout.CENTER);
+		recommendedBook1.setBounds(15, 400, 125, 160);
+		contentPane.add(recommendedBook1);
+		
+		/* Recommended Book 2*/
+		
+		Image recommendedBookImage2 = null;
+		String path2 = "http://hdimagesnew.com/wp-content/uploads/2016/09/image-not-found-i19.png";
+		
+		if ((recommendedBookList.size() > 1) && (recommendedBookList.get(1).getImage() != null))
+		{
+			path2 = recommendedBookList.get(1).getImage();
+		}
+		
+        try {
+            URL url = new URL(path2);
+            recommendedBookImage2 = ImageIO.read(url);
+        } catch (IOException e) {
+        	System.out.println("hataaaa \n");
+        	e.printStackTrace();
+        }
+        
+
+
+
+        JLabel recommendedBookLabel2 = new JLabel(new ImageIcon(recommendedBookImage2));
+		
+		JPanel recommendedBook2 = new JPanel();
+		recommendedBook2.add(recommendedBookLabel2, BorderLayout.CENTER);
+		recommendedBook2.setBounds(155, 400, 125, 160);
+		contentPane.add(recommendedBook2);
+		
+		/* Recommended Book 3*/
+		
+		Image recommendedBookImage3 = null;
+		String path3 = "http://hdimagesnew.com/wp-content/uploads/2016/09/image-not-found-i19.png";
+		
+		if ((recommendedBookList.size() > 2) && (recommendedBookList.get(2).getImage() != null))
+		{
+			path3 = recommendedBookList.get(2).getImage();
+		}
+		
+        try {
+            URL url = new URL(path3);
+            recommendedBookImage3 = ImageIO.read(url);
+        } catch (IOException e) {
+        	System.out.println("hataaaa \n");
+        	e.printStackTrace();
+        }
+        
+        JLabel recommendedBookLabel3 = new JLabel(new ImageIcon(recommendedBookImage3));
+
+		JPanel recommendedBook3 = new JPanel();
+		recommendedBook3.add(recommendedBookLabel3, BorderLayout.CENTER);
+		recommendedBook3.setBounds(295, 400, 125, 160);
+		contentPane.add(recommendedBook3);
+
+
+
+		
+		/* Recommended Book 4*/
+		
+		Image recommendedBookImage4 = null;
+		String path4 = "http://hdimagesnew.com/wp-content/uploads/2016/09/image-not-found-i19.png";
+		
+		if ((recommendedBookList.size() > 3) && (recommendedBookList.get(3).getImage() != null))
+		{
+			path4 = recommendedBookList.get(3).getImage();
+		}
+		
+        try {
+            URL url = new URL(path4);
+            recommendedBookImage4 = ImageIO.read(url);
+        } catch (IOException e) {
+        	System.out.println("hataaaa \n");
+        	e.printStackTrace();
+        }
+        
+        JLabel recommendedBookLabel4 = new JLabel(new ImageIcon(recommendedBookImage4));
+		
+		
+		JPanel recommendedBook4 = new JPanel();
+		recommendedBook4.add(recommendedBookLabel4, BorderLayout.CENTER);
+		recommendedBook4.setBounds(435, 400, 125, 160);
+		contentPane.add(recommendedBook4);
+		
+		/* Recommended Book 5*/
+		
+		Image recommendedBookImage5 = null;
+		String path5 = "http://hdimagesnew.com/wp-content/uploads/2016/09/image-not-found-i19.png";
+		
+		if ((recommendedBookList.size() > 4) && (recommendedBookList.get(4).getImage() != null))
+		{
+			path5 = recommendedBookList.get(4).getImage();
+		}
+		
+        try {
+            URL url = new URL(path5);
+            recommendedBookImage5 = ImageIO.read(url);
+        } catch (IOException e) {
+        	System.out.println("hataaaa \n");
+        	e.printStackTrace();
+        }
+        
+        JLabel recommendedBookLabel5 = new JLabel(new ImageIcon(recommendedBookImage5));
+        
+		JPanel recommendedBook5 = new JPanel();
+		recommendedBook5.add(recommendedBookLabel5, BorderLayout.CENTER);
+		recommendedBook5.setBounds(575, 400, 125, 160);
+		contentPane.add(recommendedBook5);
 		
 		for (Book tempBook : recommendedBookList)
 		{
