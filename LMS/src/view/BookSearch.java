@@ -31,23 +31,6 @@ public class BookSearch extends JFrame {
 	private JButton btnExport;
 	BookDetail previousBookDetail = null;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Library library = new Library("/home/songulab/workspace/Books3.csv");
-					BookSearch frame = new BookSearch(library);
-					frame.setVisible(true);
-
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
