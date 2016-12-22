@@ -90,7 +90,7 @@ public class ItemBasedCFAnalyzeEngine
 		
 		return recommendedBooks;
 	}
-	
+	 
 	private Map<String, Integer> constructOccurencesHash(ArrayList<Book> recommendationCandidates)
 	{
 		Map<String, Integer> occurrencehash = new HashMap<String, Integer>();
