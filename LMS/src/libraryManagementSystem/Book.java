@@ -172,7 +172,7 @@ public class Book
 	@Override
 	public String toString() 
 	{
-		return "ISBN: " + isbn + "\n" +
+		return "ISBN: |" + isbn + "|\n" +
 			   "Book Title: " + title + "\n" +
 			   "Book Author: " + author + "\n" +
 			   "Year of Publication: " + year + "\n" +

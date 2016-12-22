@@ -11,8 +11,8 @@ public class RatingImporter {
 	
 	public static ArrayList<Rating> readRatingData(Library library) 
 	{
-		String fileName = "BXBookRatings.csv";
-		//String fileName = "BXBookRatings_Complete.csv";
+		//String fileName = "BXBookRatings.csv";
+		String fileName = "BXBookRatings_Complete.csv";
 		
 		File fileFromDataReading = new File(fileName);
 		
@@ -38,46 +38,28 @@ public class RatingImporter {
 		ArrayList<Rating> ratingList = new ArrayList<>();
 			
  	    try 
- 	    {
- 	    	int foundCount = 0;
- 	    	int notFoundCount = 0;
- 	    	
+ 	    { 
  	    	String str = null;
 		    while((str = br.readLine()) != null)
 		    {	
 			    str = str.replace('"', ' ');
 			    String[] arr = str.split(";");		
  
-			    Book currentBook = library.getBookByID(String.valueOf(arr[1].trim()));
-			    
+			    Book currentBook = library.getBookByID(String.valueOf(arr[1].trim())); 
 
+			    String userId = (arr[0].trim()); 
+			    int rating = Integer.valueOf(arr[2].trim());
 			    
-			    
-			    if (currentBook == null)
+			    if (rating == 0 || currentBook == null)
 			    {
-			    	notFoundCount++;
 			    	continue;
 			    } 
-			    else
-			    {
-			    	foundCount++;
-			    }
-
-			    String userId = String.valueOf(arr[0]).replace(':', ' ').trim();
-			    int rating = Integer.valueOf(arr[2].trim());
 			    
 			    Rating ratingObj = new Rating(userId, rating, currentBook);
 			    
-			    currentBook.addRating(ratingObj);
-			    
-			    
-			    
-			    
+			    currentBook.addRating(ratingObj); 
 			    ratingList.add(ratingObj);
-	    	}
-
-		    System.out.println("+++ Found book count : " + foundCount);
-		    System.out.println("--- Not Found book count : " + notFoundCount);
+	    	} 
 		    
 	    }
     	catch (IOException e)

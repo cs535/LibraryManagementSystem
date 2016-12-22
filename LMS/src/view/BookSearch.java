@@ -221,7 +221,6 @@ public class BookSearch extends JFrame {
 				{
 					bookCreation(i);
 				}
-				////system.out.println(bookResults);
 			}
 
 			private void bookCreation(int i) {
@@ -499,6 +498,7 @@ public class BookSearch extends JFrame {
 				if (e.getClickCount() == 1) { // double click detection
 					JTable target = (JTable) e.getSource();
 					int row = target.getSelectedRow();
+					 
 					BookDetail bookDetail = new BookDetail(bookResults.get(row), library);
 					if (previousBookDetail != null)
 					{ 

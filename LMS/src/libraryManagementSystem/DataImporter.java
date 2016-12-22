@@ -55,6 +55,8 @@ public class DataImporter
 			    b.setPublishing_house(String.valueOf(arr[4]).trim());
 			    b.setImage(String.valueOf(arr[6]).trim());
 			    bookList.add(b);
+			    
+			   // System.out.println("BookId : |" + b.getIsbn() + "|");
 	    	}
 	    }
     	catch (IOException e)

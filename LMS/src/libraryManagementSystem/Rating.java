@@ -17,10 +17,7 @@ public class Rating {
 		else 
 		{
 			this.ratingP = 2;
-		}
-		
-		
-		
+		} 
 		this.book = book;	
 	}
 	
@@ -36,4 +33,12 @@ public class Rating {
 	{
 		return this.book;
 	}
+	
+	public String toString()
+	{
+		return "bookISBN : " + book.getIsbn() + "\n" + 
+				"ratingP : " + ratingP + "\n"+
+				"userId : " + userId + "\n";
+	}
+	
 }
