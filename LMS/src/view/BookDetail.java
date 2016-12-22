@@ -53,7 +53,7 @@ public class BookDetail extends JFrame {
 		
 		setTitle("Book Detail");
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 715, 600);
+		setBounds(100, 100, 715, 620);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -182,6 +182,13 @@ public class BookDetail extends JFrame {
 		recommendedBook1.setBounds(15, 400, 125, 160);
 		contentPane.add(recommendedBook1);
 		
+		if (recommendedBookList.size() > 0) {
+			JLabel recommendedBookName1 = new JLabel(recommendedBookList.get(0).getTitle());
+			recommendedBookName1.setFont(new Font("Dialog", Font.BOLD, 16));
+			recommendedBookName1.setBounds(15, 560, 125, 32);
+			contentPane.add(recommendedBookName1);
+		}
+		
 		/* Recommended Book 2*/
 		
 		Image recommendedBookImage2 = null;
@@ -210,6 +217,13 @@ public class BookDetail extends JFrame {
 		recommendedBook2.setBounds(155, 400, 125, 160);
 		contentPane.add(recommendedBook2);
 		
+		if (recommendedBookList.size() > 1) {
+			JLabel recommendedBookName2 = new JLabel(recommendedBookList.get(1).getTitle());
+			recommendedBookName2.setFont(new Font("Dialog", Font.BOLD, 16));
+			recommendedBookName2.setBounds(155, 560, 125, 32);
+			contentPane.add(recommendedBookName2);
+		}
+		
 		/* Recommended Book 3*/
 		
 		Image recommendedBookImage3 = null;
@@ -235,7 +249,12 @@ public class BookDetail extends JFrame {
 		recommendedBook3.setBounds(295, 400, 125, 160);
 		contentPane.add(recommendedBook3);
 
-
+		if (recommendedBookList.size() > 0) {
+			JLabel recommendedBookName3 = new JLabel(recommendedBookList.get(2).getTitle());
+			recommendedBookName3.setFont(new Font("Dialog", Font.BOLD, 16));
+			recommendedBookName3.setBounds(295, 560, 125, 32);
+			contentPane.add(recommendedBookName3);
+		}
 
 		
 		/* Recommended Book 4*/
@@ -264,6 +283,13 @@ public class BookDetail extends JFrame {
 		recommendedBook4.setBounds(435, 400, 125, 160);
 		contentPane.add(recommendedBook4);
 		
+		if (recommendedBookList.size() > 0) {
+			JLabel recommendedBookName4 = new JLabel(recommendedBookList.get(3).getTitle());
+			recommendedBookName4.setFont(new Font("Dialog", Font.BOLD, 16));
+			recommendedBookName4.setBounds(435, 560, 125, 32);
+			contentPane.add(recommendedBookName4);
+		}
+		
 		/* Recommended Book 5*/
 		
 		Image recommendedBookImage5 = null;
@@ -288,6 +314,13 @@ public class BookDetail extends JFrame {
 		recommendedBook5.add(recommendedBookLabel5, BorderLayout.CENTER);
 		recommendedBook5.setBounds(575, 400, 125, 160);
 		contentPane.add(recommendedBook5);
+		
+		if (recommendedBookList.size() > 0) {
+			JLabel recommendedBookName5 = new JLabel(recommendedBookList.get(4).getTitle());
+			recommendedBookName5.setFont(new Font("Dialog", Font.BOLD, 16));
+			recommendedBookName5.setBounds(575, 560, 125, 32);
+			contentPane.add(recommendedBookName5);
+		}
 		
 		for (Book tempBook : recommendedBookList)
 		{
