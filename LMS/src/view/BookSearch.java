@@ -540,6 +540,10 @@ public class BookSearch extends JFrame {
             public void actionPerformed(ActionEvent arg0) {
                 JFileChooser saveFile = new JFileChooser();
                 saveFile.showSaveDialog(null);
+                String exportPath = saveFile.getSelectedFile().getParent() + "/";
+                String exportFileName = saveFile.getSelectedFile().getName();
+                DataExporter exportData = new DataExporter();
+                exportData.writeDataToFile(exportFileName, exportPath,bookResults);
             }
         });
 		btnExport.setBounds(520, 894, 456, 48);
