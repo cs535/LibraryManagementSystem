@@ -6,6 +6,13 @@ public class Rating {
 	private int ratingP;
 	private Book book;
 	
+	/**
+	 * @param userId
+	 * @param ratingP
+	 * @param book
+	 */
+	
+	//constructor
 	public Rating(String userId, int rating, Book book)
 	{
 		this.userId = userId;
@@ -21,14 +28,23 @@ public class Rating {
 		this.book = book;	
 	}
 	
+	/**
+	 * @return userId
+	 */
 	public String getUserId() {
 		return userId;
 	}  
 	
+	/**
+	 * @return ratingP
+	 */
 	public int getRating() {
 		return ratingP;
 	} 
 	
+	/**
+	 * @return book
+	 */
 	public Book getBook()
 	{
 		return this.book;
