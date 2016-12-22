@@ -1,6 +1,8 @@
 package tests;
 
 import libraryManagementSystem.Book;
+import libraryManagementSystem.ItemBasedCFAnalyzeEngine;
+
 import java.util.ArrayList;
 import junit.framework.TestCase;
 import libraryManagementSystem.Library;
@@ -8,6 +10,8 @@ import libraryManagementSystem.Library;
 public class LibraryTest extends TestCase {
 
 	private Library library;
+
+	private ItemBasedCFAnalyzeEngine recommendationEngine;
 
 	public LibraryTest() {
 		super();
@@ -19,6 +23,7 @@ public class LibraryTest extends TestCase {
 		bookList.add(new Book("isbn5", "title3", "author1", "3", "house2", ""));
 		bookList.add(new Book("isbn6", "title3", "author3", "3", "house4", ""));
 		this.library = new Library(bookList);
+		this.recommendationEngine = new ItemBasedCFAnalyzeEngine(this.library);
 	}
 	
 	public void testTitleSearch(){
@@ -201,6 +206,14 @@ public class LibraryTest extends TestCase {
 		}
 		resultList = library.advancedSearch("title1", "author2", "1", "house1", "");
 		assertEquals(resultList.size(), 0);
+	}
+	
+	public void testGetRecommendedBooks(){
+		ArrayList<Book> booktoSearch = library.advancedSearch("title1", "author2", "", "", "");
+		assertEquals(booktoSearch.size(), 1);
+		Book book = booktoSearch.get(0);
+		ArrayList<Book> resultBooks = this.recommendationEngine.getRecommendedBooksFor(book,5);
+		assertEquals(resultBooks.size(),0);
 	}
 
 }
